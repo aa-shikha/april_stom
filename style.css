@@ -128,6 +128,7 @@ body {
     font-weight: bold;
     cursor: pointer;
 }
+
 /* --- HERO SECTION --- */
 .hero-section {
     position: relative;
@@ -1534,6 +1535,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: var(--primary-orange);
 }
 
+/*==========gallery============*/
 
 .gallery-section {
     /* Margin/Padding kam ki gayi hai (Top Right Bottom Left) */
@@ -1665,6 +1667,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: #fff;
     border: 1px solid rgba(255,255,255,0.1);
 }
+
 
 /*============= Stories Section (New) =============*/
 .stories-section {
@@ -2339,7 +2342,6 @@ html, body {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
 /* ================================================================
    2. MOBILE NAVIGATION & HAMBURGER (Max-width: 992px)
    ================================================================ */
@@ -2439,91 +2441,1094 @@ html, body {
         background: rgba(0, 0, 0, 0.9) !important;
         backdrop-filter: blur(10px);
     }
+}
 
-    /* Hero & Text Scaling */
-    .hero-content h1 {
-        font-size: 2.8rem;
-    }
-
-    .about-text h2, 
-    .headline-group h2, 
-    .packages-header h2, 
-    .stay-title h2, 
-    .gallery-main-title,
-    .stories-main-title,
-    .contact-title {
-        font-size: 2.5rem !important;
-    }
-
-    /* All Grids to Single Column */
-    .destinations-grid, 
-    .stay-grid-container, 
-    .packages-container, 
-    .about-grid,
-    .form-grid,
-    .search-grid,
-    .stay-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* Stats Section */
-    .stats-glass {
-        position: relative;
-        margin-top: 40px;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 20px;
-        background: rgba(255, 255, 255, 0.1);
-    }
-
-    /* Gallery - 2 columns */
-    .gallery-grid-main {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .large-item, .wide-item {
-        grid-column: span 2;
-    }
-
-    /* Footer & Contact */
-    .contact-container,
-    .footer-container,
-    .footer-bottom {
+/* ================================================================
+   HERO SECTION MOBILE FIX (As per your Screenshot)
+   ================================================================ */
+@media (max-width: 992px) {
+    .hero-section {
+        height: auto !important;
+        min-height: 100vh;
+        /* Gap control karne ke liye padding aur flex settings */
+        display: flex;
         flex-direction: column;
-        gap: 20px;
-        text-align: center;
+        justify-content: flex-start; /* Content ko upar rakhega */
+        align-items: flex-start;
+        padding: 100px 6% 30px 6% !important; 
+        gap: 20px; /* Saare items ke beech ka default gap */
+    }
+
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 10px; /* Content aur button ke beech ka gap kam kiya */
+    }
+
+    .hero-content h1 {
+        font-size: 2.6rem !important;
+        margin-bottom: 12px;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+        line-height: 1.4;
+    }
+
+    /* Button ke niche ka gap fix karne ke liye */
+    .plan-btn {
+        margin-top: 5px !important;
+        margin-bottom: 30px; /* Yahan se aap stats aur button ka gap control kar sakte hain */
+    }
+
+    .stats-glass {
+        position: relative !important;
+        bottom: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        margin-top: 10px !important; /* Forcefully button ke kareeb laane ke liye */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 15px 10px !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+        border-radius: 15px;
+        /* Desktop ke kisi bhi absolute transform ko band karein */
+        transform: none !important; 
+    }
+
+    .stat-item {
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 5px 0;
+    }
+
+    .stat-item:last-child {
+        border-right: none;
+    }
+
+    .stat-item h3 {
+        font-size: 1.4rem !important;
+        margin-bottom: 2px;
+    }
+
+    .stat-item p {
+        font-size: 0.6rem !important;
+        margin: 0;
+        opacity: 0.8;
     }
 }
 
 /* ================================================================
-   4. SMALL DEVICES (Max-width: 480px)
+   ABOUT SECTION MOBILE RESPONSIVE (Voyara Style)
    ================================================================ */
-@media (max-width: 480px) {
-    .logo { font-size: 22px; }
 
-    .hero-content h1 { font-size: 2.2rem; }
-
-    .badge {
-        font-size: 12px;
-        padding: 6px 15px;
+@media (max-width: 992px) {
+    .about-section {
+        padding: 60px 6%; /* Mobile par side padding thodi kam */
     }
 
-    .flight-card {
-        grid-template-columns: 1fr;
+    .about-container {
+        grid-template-columns: 1fr !important; /* Stack text on top of cards */
+        gap: 40px;
+        text-align: left; /* Left align as per screenshot */
+    }
+
+    .sub-heading {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+        margin-bottom: 10px;
+    }
+
+    .about-text h2 {
+        font-size: 2.4rem !important; /* Image ke hisab se scaling */
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+
+    /* ABOUT GRID & CARDS MOBILE */
+    .about-grid {
+        grid-template-columns: 1fr !important; /* Cards ek ke niche ek */
+        gap: 20px;
+    }
+
+    .about-card {
+        padding: 25px; /* Thoda compact padding */
+        border-radius: 20px;
+        background: #ffffff; /* Image mein card white background par hai */
+        box-shadow: 0 10px 30px rgba(0,0,0,0.03); /* Soft shadow */
+    }
+
+    .card-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .about-card h3 {
+        font-size: 1.3rem;
+        margin: 10px 0;
+    }
+
+    .about-card p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    /* Scroll animations ko mobile par disable ya subtle rakhein */
+    .about-card:hover {
+        transform: translateY(-5px);
+    }
+}
+
+/* Very Small Devices */
+@media (max-width: 480px) {
+    .about-text h2 {
+        font-size: 2rem !important;
+    }
+    
+    .about-section {
+        padding: 40px 5%;
+    }
+}
+
+/* ================================================================
+   EXPLORE SECTION MOBILE RESPONSIVE (Voyara Style)
+   ================================================================ */
+
+@media (max-width: 992px) {
+    .explore-section {
+        padding: 60px 6%; /* Side margins adjusted for mobile */
+    }
+
+    /* Headline aur Search ko stack karein */
+    .explore-header {
+        grid-template-columns: 1fr !important; /* Stack columns */
+        gap: 25px;
+        margin-bottom: 35px;
+        text-align: left;
+    }
+
+    .headline-group h2 {
+        font-size: 2.5rem !important; /* Title scaling */
+        line-height: 1.1;
+    }
+
+    /* Search Bar Mobile Fix */
+    .search-container input {
+        padding: 15px 20px 15px 50px;
+        font-size: 1rem;
+        border-radius: 50px; /* Full rounded as per image */
+    }
+
+    .search-icon {
+        left: 20px;
+        font-size: 1.1rem;
+    }
+
+    /* Filter Tags Mobile Fix */
+    .filter-tags {
+        gap: 10px;
+        margin-bottom: 40px;
+        /* Optional: Horizontal scroll agar tags zyada hain */
+        overflow-x: auto; 
+        padding-bottom: 10px;
+        scrollbar-width: none; /* Hide scrollbar for clean look */
+    }
+    
+    .filter-tags::-webkit-scrollbar { display: none; }
+
+    .tag {
+        padding: 10px 22px;
+        font-size: 0.9rem;
+        white-space: nowrap; /* Tags line break na karein */
+    }
+
+    /* Destination Grid Mobile Fix */
+    .destinations-grid {
+        grid-template-columns: 1fr !important; /* One card per row */
+        gap: 30px;
+    }
+
+    .destination-card {
+        height: 420px; /* Mobile standard card height */
+        border-radius: 25px;
+    }
+
+    /* Overlay Text Fix for mobile screens */
+    .location-name {
+        font-size: 1.8rem !important;
+        margin-bottom: 10px;
+    }
+
+    .price-value {
+        font-size: 1.4rem !important;
+    }
+    
+    .price-value::before {
+        font-size: 1.2rem;
+    }
+}
+
+/* Very Small Devices (Phones) */
+@media (max-width: 480px) {
+    .headline-group h2 {
+        font-size: 2.2rem !important;
+    }
+
+    .destination-card {
+        height: 380px; /* Thoda chota height screen ke liye */
+    }
+
+    .card-overlay {
+        padding: 20px;
+    }
+}
+
+/* ================================================================
+   PACKAGES SECTION MOBILE RESPONSIVE (Voyara Style)
+   ================================================================ */
+
+@media (max-width: 992px) {
+    .packages-section {
+        padding: 60px 6%; /* Side margins for mobile */
+    }
+
+    .packages-header {
+        text-align: left;
+        margin-bottom: 40px;
+    }
+
+    .tour-tag {
+        font-size: 11px;
+        margin-bottom: 10px;
+    }
+
+    .packages-header h2 {
+        font-size: 2.8rem !important; /* Heading scaling */
+        line-height: 1.1;
+    }
+
+    /* Stack Cards Vertically */
+    .packages-container {
+        grid-template-columns: 1fr !important; 
+        gap: 40px; /* Cards ke beech space */
+    }
+
+    .package-card {
+        padding: 40px 30px;
+        min-height: auto; /* Fixed height hatayein mobile par */
+        border-radius: 30px;
+        position: relative; /* Badge position ke liye */
+    }
+
+    /* Highlighted card (Signature) fix */
+    .package-card.highlighted {
+        transform: scale(1); /* Mobile par scale hatayein, side se katega nahi */
+        margin-top: 20px; /* Badge ke liye space */
+    }
+
+    /* "Most Loved" Badge Mobile Fix */
+    .most-loved-badge {
+        position: absolute;
+        top: -15px; /* Card ke thoda upar */
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--primary-orange);
+        color: white;
+        padding: 6px 18px;
+        border-radius: 50px;
+        font-size: 11px;
+        font-weight: 700;
+        z-index: 5;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .package-card h3 {
+        font-size: 1.8rem !important;
+    }
+
+    .package-price {
+        font-size: 2.5rem !important;
+        margin-bottom: 25px;
+    }
+
+    .features li {
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+    }
+
+    .select-btn {
+        padding: 14px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Extra Small Phones */
+@media (max-width: 480px) {
+    .packages-header h2 {
+        font-size: 2.2rem !important;
+    }
+
+    .package-card {
+        padding: 30px 20px;
+    }
+}
+
+/* ================================================================
+   STAY SECTION MOBILE RESPONSIVE (Voyara Style)
+   ================================================================ */
+
+@media (max-width: 992px) {
+    .stay-section {
+        padding: 60px 6%;
+    }
+
+    /* Header ko stack karein */
+    .stay-header {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 25px;
+        margin-bottom: 40px;
+    }
+
+    .stay-title h2 {
+        font-size: 2.8rem !important;
+        line-height: 1.1;
+    }
+
+    .stay-title p {
+        font-size: 1rem;
+        margin-top: 15px;
+    }
+
+    /* Filters ko wrap karein */
+    .stay-filters {
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .stay-tag {
+        padding: 10px 22px;
+        font-size: 0.9rem;
+        flex-grow: 1; /* Taaki buttons screen fill karein */
         text-align: center;
     }
 
-    .price-section {
-        justify-content: center;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    /* Grid to Single Column */
+    .stay-grid, .stay-grid-container {
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+
+    .stay-card {
+        border-radius: 25px;
+    }
+
+    .stay-img-box, .stay-img {
+        height: 280px !important; /* Mobile par image height balance */
+    }
+
+    /* Card Body Optimization */
+    .stay-body {
+        padding: 20px;
+    }
+
+    .stay-top-row h3 {
+        font-size: 1.5rem !important;
+    }
+
+    /* Price aur Reserve button ko side-by-side laane ke liye */
+    .stay-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+        border-top: 1px solid rgba(0,0,0,0.05);
         padding-top: 15px;
     }
 
-    .gallery-grid-main {
-        grid-template-columns: 1fr;
+    .stay-price {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #1a1a1a;
     }
 
-    .large-item, .wide-item {
-        grid-column: span 1;
+    .stay-price span {
+        font-size: 0.8rem;
+        font-weight: 400;
+        opacity: 0.6;
+    }
+
+    .reserve-btn {
+        background: #001511; /* Dark Teal matching image */
+        color: white;
+        padding: 10px 25px;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-decoration: none;
+    }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+    .stay-title h2 {
+        font-size: 2.2rem !important;
+    }
+
+    .stay-top-row {
+        flex-direction: row; /* H3 aur Rating side-by-side hi rahein */
+    }
+    
+    .stay-top-row h3 {
+        font-size: 1.3rem !important;
+    }
+}
+
+/* ================================================================
+   BOOKING SECTION MOBILE RESPONSIVE (Voyara Style)
+   ================================================================ */
+
+@media (max-width: 992px) {
+    /* 1. Booking Container Adjustment */
+    .booking-container {
+        padding: 30px 20px;
+        margin: 0 5%;
+        border-radius: 30px;
+        background-color: #ffffff; /* Clean white card look */
+    }
+
+    /* 2. Mode Tabs (Flights, Trains, Buses) */
+    .mode-tabs {
+        justify-content: flex-start;
+        overflow-x: auto; /* Agar screen choti ho toh scroll ho jaye */
+        padding-bottom: 10px;
+        margin: 20px 0 30px 0;
+    }
+
+    .mode-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+
+    /* 3. Search Grid to Vertical Stack */
+    .search-grid {
+        grid-template-columns: 1fr !important; /* Ek ke niche ek saare inputs */
+        gap: 20px;
+    }
+
+    /* 4. Input Box Refinement */
+    .input-box label {
+        font-size: 9px;
+        margin-bottom: 8px;
+        color: #888;
+    }
+
+    .field, .stepper-field {
+        height: 55px; /* Thoda compact */
+        border-radius: 15px;
+        background-color: #fdfaf5; /* Image jaisa light cream bg */
+        border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .field input {
+        font-size: 1rem;
+    }
+
+    /* 5. Stepper (Passengers) Mobile Fix */
+    .stepper-field {
+        justify-content: space-between; /* Icon left, controls right */
+    }
+
+    .stepper-controls {
+        gap: 20px;
+    }
+
+    .stepper-controls span {
+        font-size: 1.1rem;
+        font-weight: 700;
+    }
+
+    /* 6. Main Search Button */
+    .main-search-btn {
+        height: 55px;
+        border-radius: 15px;
+        font-size: 1.1rem;
+        margin-top: 10px;
+    }
+
+    /* 7. Flight Card Mobile (Results) */
+    .flight-card {
+        grid-template-columns: 1fr !important; /* Stack info, path, price */
+        padding: 25px;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .airline-info {
+        justify-content: center;
+    }
+
+    .flight-path {
+        flex-direction: row; /* Time aur Line ek hi row mein rahein */
+        gap: 10px;
+    }
+
+    .path-line {
+        margin: 0 10px;
+    }
+
+    .price-section {
+        flex-direction: column;
+        gap: 15px;
+        justify-content: center;
+        border-top: 1px solid rgba(0,0,0,0.05);
+        padding-top: 20px;
+    }
+
+    .price-info .label {
+        text-align: center;
+    }
+}
+
+/* Phones Scaling */
+@media (max-width: 480px) {
+    .path-node .time {
+        font-size: 1.4rem;
+    }
+    
+    .airline-name {
+        font-size: 1.1rem;
+    }
+}
+
+/* ================================================================
+   BOOKING SECTION OVERLAP FIX (Mobile)
+   ================================================================ */
+
+@media (max-width: 992px) {
+    /* 1. Grid ko stack karein taaki overlap na ho */
+    .search-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        grid-template-columns: 1fr !important; /* Grid fallback reset */
+        gap: 20px !important;
+        width: 100%;
+    }
+
+    /* 2. Har box ko poori width dein */
+    .input-box, .action-box {
+        width: 100% !important;
+        position: relative;
+    }
+
+    /* 3. Field aur Stepper-field ki width aur height fix karein */
+    .field, .stepper-field {
+        width: 100%;
+        height: 65px !important; /* Thodi zyada height mobile touch ke liye */
+        display: flex;
+        align-items: center;
+        padding: 0 20px !important;
+        box-sizing: border-box; /* Padding handling */
+        border-radius: 15px !important;
+        background-color: #fdfaf5 !important; /* Creamy background as per image */
+    }
+
+    /* 4. Input text ko center/stretch karein */
+    .field input {
+        width: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 1.1rem;
+        padding-left: 10px;
+    }
+/* Purane code ko isse replace karke dekhein */
+input[type="date"] {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    outline: none;
+    cursor: pointer;
+    
+    /* Center karne ke liye */
+    display: flex;
+    align-items: center;
+    
+    /* Default icon ko clean rakhne ke liye sirf ise use karein */
+    height: 100%; 
+}
+
+/* Chrome/Safari mein default blue arrow hatane ke liye (optional) */
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    /* Agar aapne FontAwesome icon pehle se lagaya hai, toh ise opacity 0 kar dein */
+    opacity: 0.1; 
+}
+    /* 6. Action Box (Search Button) */
+    .action-box {
+        margin-top: 10px;
+    }
+
+    .main-search-btn {
+        width: 100% !important;
+        height: 60px !important;
+        border-radius: 15px !important;
+    }
+}
+
+/* ================================================================
+   FINAL BOOKING FORM MOBILE RESPONSIVE (Voyara Style)
+   ================================================================ */
+
+@media (max-width: 992px) {
+    /* 1. Main Section Padding */
+    .final-booking-section {
+        padding: 60px 5%;
+    }
+
+    /* 2. Form Container: Stack Left & Right sides */
+    .booking-form-container {
+        grid-template-columns: 1fr !important; /* Stack form and summary */
+        padding: 30px 20px;
+        gap: 30px;
+        border-radius: 35px;
+    }
+
+    /* 3. Form Grid: Stack inputs vertically */
+    .form-grid {
+        grid-template-columns: 1fr !important; /* Single column for inputs */
+        gap: 20px;
+    }
+
+    /* 4. Input Wrapper Refinement */
+    .input-wrapper, .stepper-input {
+        padding: 12px 18px;
+        border-radius: 18px;
+        height: 60px; /* Uniform height */
+        box-sizing: border-box;
+    }
+
+    .input-wrapper input, .input-wrapper select {
+        font-size: 1rem;
+    }
+
+    /* 5. Package Buttons (Essential, Signature, Voyager) */
+    .package-options {
+        display: flex;
+        flex-wrap: wrap; /* Agar screen bahut choti ho toh line break ho jaye */
+        gap: 10px;
+    }
+
+    .pkg-btn {
+        padding: 12px 10px;
+        font-size: 0.9rem;
+        border-radius: 12px;
+        flex: 1; /* Equal width buttons */
+    }
+
+    /* 6. Booking Summary Card (The grey/cream box) */
+    .booking-summary-card {
+        padding: 30px 20px;
+        border-radius: 25px;
+        margin-top: 10px;
+    }
+
+    .booking-summary-card h3 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+
+    .summary-item {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    /* 7. Total Price & Confirm Button */
+    .total-price h2 {
+        font-size: 2rem !important;
+    }
+
+    .confirm-btn {
+        padding: 16px;
+        font-size: 1.1rem;
+        border-radius: 18px;
+    }
+
+    /* 8. Success Modal Mobile Fix */
+    .modal-content {
+        width: 85%;
+        padding: 30px 20px;
+    }
+
+    .modal-content h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Small Phones scaling */
+@media (max-width: 480px) {
+    .banner-heading {
+        font-size: 2.5rem !important;
+    }
+
+    .pkg-btn {
+        font-size: 0.8rem;
+        padding: 10px 5px;
+    }
+    
+    .total-price h2 {
+        font-size: 1.8rem !important;
+    }
+}
+
+/* ================================================================
+   GALLERY SECTION MOBILE RESPONSIVE (Voyara Style)
+   ================================================================ */
+
+@media (max-width: 992px) {
+    .gallery-section {
+        padding: 60px 6% 40px 6%;
+    }
+
+    .gallery-header {
+        text-align: left;
+        padding-left: 0;
+        margin-bottom: 30px;
+    }
+
+    .gallery-main-title {
+        font-size: 2.8rem !important; /* Title scaling */
+        line-height: 1.1;
+    }
+
+    /* Grid Reset: Desktop ke complex spans ko hata kar simple 2 columns */
+    .gallery-grid-main {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* 2 equal columns */
+        grid-template-rows: auto !important; /* Fixed rows hatayein */
+        gap: 15px !important;
+        margin-top: 20px;
+    }
+
+    /* Desktop ke grid placements ko mobile par reset karein */
+    .gallery-item, 
+    .large-item, 
+    .wide-item {
+        grid-column: span 1 !important; /* Saari images 1 column lengi */
+        grid-row: span 1 !important;    /* Saari images 1 row lengi */
+        height: 220px !important;       /* Mobile par uniform square look */
+        border-radius: 25px !important; /* Smooth rounded corners as per image */
+    }
+
+    /* Agar aap chahte hain ki kuch images abhi bhi badi dikhein (Optional) */
+    /* .large-item { grid-column: span 2 !important; height: 300px !important; } */
+
+    .gallery-item img {
+        transition: transform 0.4s ease;
+    }
+
+    /* Mobile par caption hamesha dikhana hai ya hide karna hai? */
+    /* Neeche wala code caption ko mobile par hide kar dega clean look ke liye */
+    .img-caption {
+        display: none; 
+    }
+}
+
+/* Small Phones scaling */
+@media (max-width: 480px) {
+    .gallery-main-title {
+        font-size: 2.2rem !important;
+    }
+
+    .gallery-grid-main {
+        gap: 10px !important; /* Chote phone par gap kam */
+    }
+
+    .gallery-item {
+        height: 180px !important; /* Chote phone par height kam */
+        border-radius: 20px !important;
+    }
+}
+
+/* ================================================================
+   STORIES SECTION MOBILE RESPONSIVE (Voyara Style)
+   ================================================================ */
+
+@media (max-width: 992px) {
+    .stories-section {
+        padding: 60px 6% 40px 6%;
+    }
+
+    .stories-header {
+        margin-bottom: 40px;
+    }
+
+    .stories-main-title {
+        font-size: 2.8rem !important; /* Mobile scaling for title */
+        line-height: 1.1;
+    }
+
+    /* Testimonial Slider Fix */
+    .testimonial-slider {
+        max-width: 100%;
+    }
+
+    .quote-icon {
+        font-size: 40px; /* Thoda chota icon mobile par */
+        margin-bottom: 20px;
+    }
+
+    .quote-text {
+        font-size: 1.6rem !important; /* Screenshot jaisa size */
+        line-height: 1.5;
+        padding: 0 10px;
+        margin-bottom: 25px;
+    }
+
+    .stars {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .author-name {
+        font-size: 1.1rem;
+    }
+
+    /* Slider Controls (Dots + Arrows in one line) */
+    .slider-controls {
+        margin-top: 40px;
+        gap: 15px;
+    }
+
+    .nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.05); /* Subtle dark background for icons */
+    }
+
+    /* Long pill shape dot as per image */
+    .dot.active {
+        width: 30px !important;
+        background: #ff7d3e;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+/* Very Small Phones */
+@media (max-width: 480px) {
+    .stories-main-title {
+        font-size: 2.2rem !important;
+    }
+
+    .quote-text {
+        font-size: 1.4rem !important;
+    }
+
+    .slider-controls {
+        gap: 10px;
+    }
+}
+
+/* ================================================================
+   CONTACT SECTION MOBILE RESPONSIVE (Voyara Style)
+   ================================================================ */
+
+@media (max-width: 992px) {
+    .contact-section {
+        padding: 60px 6% 40px 6%;
+    }
+
+    /* 1. Container ko stack karein */
+    .contact-container {
+        flex-direction: column; /* Info upar, Form niche */
+        gap: 40px;
+        align-items: flex-start;
+    }
+
+    .contact-info {
+        width: 100%;
+    }
+
+    .contact-title {
+        font-size: 2.8rem !important;
+        margin: 15px 0;
+    }
+
+    .contact-sub {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    /* 2. Info Details scaling */
+    .info-details {
+        gap: 20px;
+    }
+
+    .info-item {
+        font-size: 1rem;
+        gap: 15px;
+    }
+
+    .info-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    /* 3. Form Card Mobile Fix */
+    .contact-form-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 30px 20px; /* Thoda compact padding as per screenshot */
+        border-radius: 35px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        font-size: 11px;
+        margin-bottom: 8px;
+    }
+
+    /* 4. Input & Textarea Refinement */
+    .form-group input, 
+    .form-group textarea {
+        padding: 12px 18px;
+        font-size: 1rem;
+        border-radius: 15px;
+        background-color: #fdfaf5; /* Image jaisa light cream */
+    }
+
+    .send-btn {
+        padding: 14px;
+        font-size: 1.1rem;
+        border-radius: 50px; /* Bada pill shape button */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+    .contact-title {
+        font-size: 2.2rem !important;
+    }
+    
+    .contact-form-card {
+        padding: 25px 15px;
+    }
+}
+
+/* ================================================================
+   FOOTER SECTION MOBILE RESPONSIVE (Voyara Style)
+   ================================================================ */
+
+@media (max-width: 992px) {
+    .main-footer {
+        padding: 60px 6% 30px 6%;
+        text-align: center; /* Saare text ko center karega */
+    }
+
+    .footer-container {
+        flex-direction: column; /* Columns ko stack karega */
+        align-items: center;    /* Sab kuch center mein align karega */
+        gap: 40px;
+        margin-bottom: 50px;
+    }
+
+    .footer-brand {
+        flex: unset;
+        min-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Logo aur description center mein */
+    }
+
+    .footer-logo {
+        justify-content: center;
+        font-size: 24px;
+    }
+
+    .footer-desc {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 15px;
+    }
+
+    /* Social icons ko center mein align karne ke liye */
+    .footer-socials {
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* Links Columns Mobile Fix */
+    .footer-links {
+        min-width: 100%;
+        text-align: center;
+    }
+
+    .footer-links h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .footer-links ul li a:hover {
+        padding-left: 0; /* Mobile par padding-left hata dein, center mein ajeeb lagta hai */
+        color: #ff7d3e;
+    }
+
+    /* Bottom Bar Mobile Fix */
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    .footer-legal {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+/* Phones Scaling */
+@media (max-width: 480px) {
+    .main-footer {
+        padding: 50px 5% 20px 5%;
+    }
+    
+    .footer-logo {
+        font-size: 22px;
     }
 }
