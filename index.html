@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voyara - Luxury Travel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme"> 
+  <header>
+    <nav class="navbar" id="navbar">
+        <div class="logo">
+            <a href="/" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px;">
+                <i class="fa-regular fa-compass"></i> Voyara
+            </a>
+        </div>
+
+        <div class="menu-icon" id="menu-icon">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#explore">Destinations</a></li>
+            <li><a href="#packages">Packages</a></li>
+            <li><a href="#hotels">Villas & Homestays</a></li>
+            <li><a href="#booking">Flights</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="mobile-only-item">
+                <a href="#final-booking" class="menu-book-btn">Book now</a>
+            </li>
+        </ul>
+
+        <div class="nav-btns">
+            <button id="theme-toggle" class="icon-btn">
+                <i class="fa-solid fa-sun" id="theme-icon"></i>
+            </button>
+            <button class="sign-in-btn">
+                <i class="fa-regular fa-user"></i> Sign in
+            </button>
+            <a href="#final-booking" class="book-now-btn desktop-only-btn">
+                Book now
+            </a>
+        </div>
+    </nav>
+</header>
+    <main class="hero-section" id="home">
+        <div class="overlay"></div>
+        
+        <div class="hero-content">
+            <div class="badge">
+                <i class="fa-solid fa-star"></i> Rated #1 boutique travel platform · 2025
+            </div>
+            <h1>Wander where <br> the world <span>whispers.</span></h1>
+            <p>Curated journeys to the planet's most extraordinary places. From hidden island bungalows to mountain monasteries.</p>
+            
+            <div class="cta-group">
+    <a href="#final-booking" style="text-decoration: none;">
+        <button class="plan-btn">Plan your journey &rarr;</button>
+    </a>
+</div>
+        </div>
+
+        <div class="stats-glass">
+            <div class="stat-item">
+                <h3>120+</h3>
+                <p>DESTINATIONS</p>
+            </div>
+            <div class="stat-item">
+                <h3>50k</h3>
+                <p>HAPPY TRAVELERS</p>
+            </div>
+            <div class="stat-item">
+                <h3>4.9</h3>
+                <p>AVG. RATING</p>
+            </div>
+        </div>
+    </main>
+
+  <section class="about-section" id="about"> 
+    <div class="about-container">
+        <div class="about-text">
+            <span class="sub-heading">ABOUT VOYARA</span>
+            <h2>Travel that <span>moves</span> you, not just transports.</h2>
+            <p>Founded by a small team of restless writers, photographers and guides, Voyara exists for travelers who measure trips in moments, not miles. We believe in slow journeys, generous time and the kind of quiet that only the world's edges can give you.</p>
+        </div>
+
+        <div class="about-grid">
+    <div class="about-card">
+        <div class="card-icon"><i class="fa-solid fa-earth-africa"></i></div>
+        <h3>Global reach</h3>
+        <p>Curated routes across 6 continents and 120+ destinations.</p>
+    </div>
+    <div class="about-card">
+    <div class="card-icon" ><i class="fa-solid fa-shield-halved"></i></div> 
+    <h3>Secure booking</h3>
+    <p>Flexible cancellation and 24/7 in-trip support, always.</p>
+</div>
+    <div class="about-card">
+        <div class="card-icon"><i class="fa-regular fa-heart"></i></div>
+        <h3>Local soul</h3>
+        <p>Hand-picked guides and stays that put community first.</p>
+    </div>
+    <div class="about-card">
+        <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <h3>Crafted detail</h3>
+        <p>Every itinerary designed by travelers, not algorithms.</p>
+    </div>
+</div>
+</section>
+
+<button id="scrollToTop" class="scroll-top-btn">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<section class="explore-section" id="explore">
+    <div class="explore-header">
+        <div class="headline-group">
+            <h2>Where would you <br> like to <span>disappear?</span></h2>
+        </div>
+
+        <div class="search-container">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="destSearch" placeholder="Search a place">
+        </div>
+    </div>
+
+   <div class="filter-tags">
+    <button class="tag active-tag" data-filter="all">All</button>
+    <button class="tag" data-filter="india">India</button>
+    <button class="tag" data-filter="asia">Asia</button> 
+    <button class="tag" data-filter="europe">Europe</button> 
+    <button class="tag" data-filter="africa">Africa</button> 
+    <button class="tag" data-filter="americas">Americas</button> </div>
+   <div class="destinations-grid">
+    <div class="destination-card" data-category="india">
+        <img src="new delhi.jpg" alt="New Delhi">
+        <div class="card-tag">Cultural</div>
+        <div class="card-overlay">
+            <span class="location-sub"><i class="fa-solid fa-location-dot"></i> India</span>
+            <h3 class="location-name">New Delhi</h3>
+            <div class="price-row">
+                <span>FROM</span>
+                <span class="price-value">10,500</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="destination-card" data-category="india">
+        <img src="mumbai.jpg" alt="Mumbai">
+        <div class="card-tag">Coastal</div>
+        <div class="card-overlay">
+            <span class="location-sub"><i class="fa-solid fa-location-dot"></i> India</span>
+            <h3 class="location-name">Mumbai</h3>
+            <div class="price-row">
+                <span>FROM</span>
+                <span class="price-value">12,500</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="destination-card" data-category="india">
+        <img src="jaipur.jpg" alt="Jaipur">
+        <div class="card-tag">Heritage</div>
+        <div class="card-overlay">
+            <span class="location-sub"><i class="fa-solid fa-location-dot"></i> India</span>
+            <h3 class="location-name">Jaipur</h3>
+            <div class="price-row">
+                <span>FROM</span>
+                <span class="price-value">8,800</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="destination-card" data-category="india">
+        <img src="uttarakhand.jpg" alt="Uttrakhand">
+        <div class="card-tag">Nature</div>
+        <div class="card-overlay">
+            <span class="location-sub"><i class="fa-solid fa-location-dot"></i> India</span>
+            <h3 class="location-name">Uttrakhand</h3>
+            <div class="price-row">
+                <span>FROM</span>
+                <span class="price-value">7,500</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="destination-card" data-category="india">
+        <img src="agra.jpg" alt="Agra">
+        <div class="card-tag">Iconic</div>
+        <div class="card-overlay">
+            <span class="location-sub"><i class="fa-solid fa-location-dot"></i> India</span>
+            <h3 class="location-name">Agra</h3>
+            <div class="price-row">
+                <span>FROM</span>
+                <span class="price-value">8,500</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="destination-card" data-category="asia">
+        <img src="bali.jfif" alt="Bali">
+        <div class="card-tag">Tropical</div>
+        <div class="card-overlay">
+            <span class="location-sub"><i class="fa-solid fa-location-dot"></i> Indonesia</span>
+            <h3 class="location-name">Bali</h3>
+            <div class="price-row">
+                <span>FROM</span>
+                <span class="price-value">1,49,000</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="destination-card active-card" data-category="asia">
+        <img src="koyota.jfif" alt="Kyoto">
+        <div class="card-tag">Cultural</div>
+        <div class="arrow-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+        <div class="card-overlay">
+            <span class="location-sub"><i class="fa-solid fa-location-dot"></i> Japan</span>
+            <h3 class="location-name">Kyoto</h3>
+            <div class="price-row">
+                <span>FROM</span>
+                <span class="price-value">1,98,000</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="destination-card" data-category="africa">
+        <img src="marrakech.jfif" alt="Marrakech">
+        <div class="card-tag">Desert</div>
+        <div class="card-overlay">
+            <span class="location-sub"><i class="fa-solid fa-location-dot"></i> Morocco</span>
+            <h3 class="location-name">Marrakech</h3>
+            <div class="price-row">
+                <span>FROM</span>
+                <span class="price-value">1,32,000</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="destination-card" data-category="europe">
+        <img src="iceland.jfif" alt="Iceland">
+        <div class="card-tag">Arctic</div>
+        <div class="card-overlay">
+            <span class="location-sub"><i class="fa-solid fa-location-dot"></i> Iceland</span>
+            <h3 class="location-name">Iceland</h3>
+            <div class="price-row">
+                <span>FROM</span>
+                <span class="price-value">2,20,000</span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="destination-card" data-category="americas">
+    <img src="patogonia.jfif" alt="Patagonia">
+    <div class="card-tag">Wilderness</div>
+    <div class="arrow-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+    <div class="card-overlay">
+        <span class="location-sub"><i class="fa-solid fa-location-dot"></i> Argentina</span>
+        <h3 class="location-name">Patagonia</h3>
+        <div class="price-row">
+            <span>FROM</span>
+            <span class="price-value">2,20,000</span> </div>
+    </div>
+</div>
+    
+    <div class="destination-card" data-category="asia">
+        <img src="maldives.jfif" alt="Maldives">
+        <div class="card-tag">Luxury</div>
+        <div class="card-overlay">
+            <span class="location-sub"><i class="fa-solid fa-location-dot"></i> Maldives</span>
+            <h3 class="location-name">Maldives</h3>
+            <div class="price-row">
+                <span>FROM</span>
+                <span class="price-value">3,10,000</span>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<section class="packages-section" id="packages">
+  <div class="packages-header">
+    <span class="tour-tag">TOUR PACKAGES</span>
+    <h2>Three ways to <span>travel slow.</span></h2>
+</div>
+    <div class="packages-container">
+        <div class="package-card">
+            <div class="card-info">
+                <h3>Essential</h3>
+                <p class="days">5 days • all-in</p>
+                <div class="package-price">
+                    <span class="currency">₹</span>1,08,000 <span class="per-person">/person</span>
+                </div>
+                <ul class="features">
+                    <li><i class="fa-solid fa-check"></i> 3-star boutique stays</li>
+                    <li><i class="fa-solid fa-check"></i> Daily breakfast</li>
+                    <li><i class="fa-solid fa-check"></i> Group guided tours</li>
+                    <li><i class="fa-solid fa-check"></i> Airport transfers</li>
+                </ul>
+            </div>
+            <button class="select-btn btn-dark">Choose Essential</button>
+        </div>
+
+        <div class="package-card highlighted">
+            <div class="most-loved-badge"><i class="fa-solid fa-sparkles"></i> Most loved</div>
+            <div class="card-info">
+                <h3>Signature</h3>
+                <p class="days">8 days • all-in</p>
+                <div class="package-price">
+                    <span class="currency">₹</span>2,08,000 <span class="per-person">/person</span>
+                </div>
+                <ul class="features">
+                    <li><i class="fa-solid fa-check"></i> 4-star handpicked hotels</li>
+                    <li><i class="fa-solid fa-check"></i> All meals included</li>
+                    <li><i class="fa-solid fa-check"></i> Private guided experiences</li>
+                    <li><i class="fa-solid fa-check"></i> Photography session</li>
+                    <li><i class="fa-solid fa-check"></i> Spa & wellness access</li>
+                </ul>
+            </div>
+            <button class="select-btn btn-orange">Choose Signature</button>
+        </div>
+
+        <div class="package-card">
+            <div class="card-info">
+                <h3>Voyager</h3>
+                <p class="days">12 days • all-in</p>
+                <div class="package-price">
+                    <span class="currency">₹</span>4,10,000 <span class="per-person">/person</span>
+                </div>
+                <ul class="features">
+                    <li><i class="fa-solid fa-check"></i> 5-star luxury resorts</li>
+                    <li><i class="fa-solid fa-check"></i> Personal concierge</li>
+                    <li><i class="fa-solid fa-check"></i> Private transfers & flights</li>
+                    <li><i class="fa-solid fa-check"></i> Exclusive cultural access</li>
+                    <li><i class="fa-solid fa-check"></i> Bespoke itinerary</li>
+                </ul>
+            </div>
+            <button class="select-btn btn-dark">Choose Voyager</button>
+        </div>
+    </div>
+</section>
+<section class="stay-section" id="hotels">
+    <div class="stay-header">
+        <div class="stay-title">
+            <span class="mini-title">WHERE YOU'LL STAY</span>
+            <h2>Hotels, villas & <br> <span>quiet corners.</span></h2>
+        </div>
+        
+        <div class="stay-filters">
+            <button class="stay-tag active-stay" data-filter="all">Hotels</button>
+            <button class="stay-tag" data-filter="apartment">Apartments</button>
+            <button class="stay-tag" data-filter="resort">Resorts</button>
+            <button class="stay-tag" data-filter="villa">Villas</button>
+        </div>
+    </div>
+
+    <div class="stay-grid-container">
+        <div class="stay-card" data-stay="apartment">
+            <div class="stay-img-box">
+                <img src="hotel1.jpg" alt="Maison Lumière">
+                <span class="stay-badge">Boutique</span>
+            </div>
+            <div class="stay-body">
+                <div class="stay-top-row">
+                    <h3>Maison Lumière</h3>
+                    <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                </div>
+                <span class="stay-loc"><i class="fa-solid fa-location-dot"></i> Paris, France</span>
+                
+                <div class="stay-footer">
+                    <div class="stay-price">
+                        <span class="val">₹26,500</span><span class="unit">/night</span>
+                    </div>
+                    <a href="#final-booking" class="reserve-btn">Reserve</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="stay-card" data-stay="hotel">
+            <div class="stay-img-box">
+                <img src="hotel4.jpg" alt="The Alma">
+                <span class="stay-badge">Heritage</span>
+            </div>
+            <div class="stay-body">
+                <div class="stay-top-row">
+                    <h3>The Alma</h3>
+                    <div class="rating"><i class="fa-solid fa-star"></i> 4.8</div>
+                </div>
+                <span class="stay-loc"><i class="fa-solid fa-location-dot"></i> Lisbon, Portugal</span>
+                
+                <div class="stay-footer">
+                    <div class="stay-price">
+                        <span class="val">₹20,300</span><span class="unit">/night</span>
+                    </div>
+                   <a href="#final-booking" class="reserve-btn">Reserve</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="stay-card" data-stay="resort">
+            <div class="stay-img-box">
+                <img src="hotel3.jpg" alt="Casa del Sole">
+                <span class="stay-badge">Design</span>
+            </div>
+            <div class="stay-body">
+                <div class="stay-top-row">
+                    <h3>Casa del Sole</h3>
+                    <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                </div>
+                <span class="stay-loc"><i class="fa-solid fa-location-dot"></i> Florence, Italy</span>
+                
+                <div class="stay-footer">
+                    <div class="stay-price">
+                        <span class="val">₹31,500</span><span class="unit">/night</span>
+                    </div>
+                    <a href="#final-booking" class="reserve-btn">Reserve</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="stay-card" data-stay="villa">
+            <div class="stay-img-box">
+                <img src="hotel2.jpg" alt="Vanya Heritage">
+                <span class="stay-badge">Heritage</span>
+            </div>
+            <div class="stay-body">
+                <div class="stay-top-row">
+                    <h3>Vanya Haveli</h3>
+                    <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                </div>
+                <span class="stay-loc"><i class="fa-solid fa-location-dot"></i> Jaipur, India</span>
+                
+                <div class="stay-footer">
+                    <div class="stay-price">
+                        <span class="val">₹18,500</span><span class="unit">/night</span>
+                    </div>
+                   <a href="#final-booking" class="reserve-btn">Reserve</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="stay-card" data-stay="resort">
+            <div class="stay-img-box">
+                <img src="hotel5.jpg" alt="Zen Garden Resort">
+                <span class="stay-badge">Wellness</span>
+            </div>
+            <div class="stay-body">
+                <div class="stay-top-row">
+                    <h3>Zen Garden</h3>
+                    <div class="rating"><i class="fa-solid fa-star"></i> 5.0</div>
+                </div>
+                <span class="stay-loc"><i class="fa-solid fa-location-dot"></i> Hakone, Japan</span>
+                
+                <div class="stay-footer">
+                    <div class="stay-price">
+                        <span class="val">₹35,000</span><span class="unit">/night</span>
+                    </div>
+                  <a href="#final-booking" class="reserve-btn">Reserve</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="stay-card" data-stay="apartment">
+            <div class="stay-img-box">
+                <img src="hotel7.jpg" alt="Skyline Loft">
+                <span class="stay-badge">Modern</span>
+            </div>
+            <div class="stay-body">
+                <div class="stay-top-row">
+                    <h3>Skyline Loft</h3>
+                    <div class="rating"><i class="fa-solid fa-star"></i> 4.7</div>
+                </div>
+                <span class="stay-loc"><i class="fa-solid fa-location-dot"></i> New York, USA</span>
+                
+                <div class="stay-footer">
+                    <div class="stay-price">
+                        <span class="val">₹42,000</span><span class="unit">/night</span>
+                    </div>
+                 <a href="#final-booking" class="reserve-btn">Reserve</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="stay-card" data-stay="resort">
+            <div class="stay-img-box">
+                <img src="hotel6.jpg" alt="Wildflower Hall">
+                <span class="stay-badge">Luxury</span>
+            </div>
+            <div class="stay-body">
+                <div class="stay-top-row">
+                    <h3>Hilltop Sanctuary</h3>
+                    <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                </div>
+                <span class="stay-loc"><i class="fa-solid fa-location-dot"></i> Goa, India</span>
+                
+                <div class="stay-footer">
+                    <div class="stay-price">
+                        <span class="val">₹29,000</span><span class="unit">/night</span>
+                    </div>
+                  <a href="#final-booking" class="reserve-btn">Reserve</a>
+                </div>
+            </div>
+        </div>
+
+        </div>
+</section>
+
+<section class="booking-section" id="booking">
+    <div class="booking-header">
+        <span class="mini-title">GETTING THERE</span>
+        <h1 class="main-title">
+            Flights, trains & buses, <br>
+            <span class="highlight-text">all in one</span> place.
+        </h1>
+    </div>
+
+    <div class="mode-tabs">
+        <button class="mode-btn active" data-mode="flights"><i class="fa-solid fa-plane"></i> Flights</button>
+        <button class="mode-btn" data-mode="trains"><i class="fa-solid fa-train"></i> Trains</button>
+        <button class="mode-btn" data-mode="buses"><i class="fa-solid fa-bus"></i> Buses</button>
+    </div>
+
+    <div class="booking-container">
+        <div class="search-grid">
+            
+            <div class="input-box">
+                <label>FROM</label>
+                <div class="field">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="text" value="Delhi">
+                </div>
+            </div>
+
+            <div class="input-box">
+                <label>TO</label>
+                <div class="field">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    <input type="text" value="Mumbai">
+                </div>
+            </div>
+
+            <div class="input-box">
+                <label>DATE</label>
+                <div class="field">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <input type="date" id="checkInDate">
+                </div>
+            </div>
+
+            <div class="input-box">
+                <label>PASSENGERS</label>
+                <div class="stepper-field">
+                    <i class="fa-solid fa-user-group"></i>
+                    <div class="stepper-controls">
+                        <button type="button" onclick="changePax(-1)">-</button>
+                        <span id="pax-count-val">2</span>
+                        <button type="button" onclick="changePax(1)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-box">
+                <button class="main-search-btn">Search</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="flight-results-container">
+    <div class="flight-card" data-type="international">
+        <div class="airline-info">
+            <div class="airline-logo"><i class="fa-solid fa-plane"></i></div>
+            <div class="airline-meta">
+                <p class="airline-name">Aegean Air</p>
+                <span class="flight-badge direct">DIRECT</span>
+            </div>
+        </div>
+        <div class="flight-path">
+            <div class="path-node">
+                <p class="time">07:20</p>
+                <span class="city">Athens (ATH)</span>
+            </div>
+            <div class="path-line">
+                <div class="duration"><i class="fa-regular fa-clock"></i> 50m</div>
+                <hr>
+            </div>
+            <div class="path-node">
+                <p class="time">08:10</p>
+                <span class="city">Santorini (JTR)</span>
+            </div>
+        </div>
+        <div class="price-section">
+            <div class="price-info">
+                <p class="amount">₹11,999</p>
+                <span class="label">per person</span>
+            </div>
+            <button class="select-btn">Select</button>
+        </div>
+    </div>
+    
+
+    <div class="flight-card" data-type="domestic">
+        <div class="airline-info">
+            <div class="airline-logo"><i class="fa-solid fa-plane-up"></i></div>
+            <div class="airline-meta">
+                <p class="airline-name">IndiGo</p>
+                <span class="flight-badge best-price">BEST PRICE</span>
+            </div>
+        </div>
+        <div class="flight-path">
+            <div class="path-node">
+                <p class="time">10:30</p>
+                <span class="city">Delhi (DEL)</span>
+            </div>
+            <div class="path-line">
+                <div class="duration"><i class="fa-regular fa-clock"></i> 2h 15m</div>
+                <hr>
+            </div>
+            <div class="path-node">
+                <p class="time">12:45</p>
+                <span class="city">Mumbai (BOM)</span>
+            </div>
+        </div>
+        <div class="price-section">
+            <div class="price-info">
+                <p class="amount">₹5,400</p>
+                <span class="label">per person</span>
+            </div>
+            <button class="select-btn">Select</button>
+        </div>
+    </div>
+
+    <div class="flight-card" data-type="international">
+        <div class="airline-info">
+            <div class="airline-logo"><i class="fa-solid fa-plane-departure"></i></div>
+            <div class="airline-meta">
+                <p class="airline-name">Air India</p>
+            </div>
+        </div>
+        <div class="flight-path">
+            <div class="path-node">
+                <p class="time">03:15</p>
+                <span class="city">Delhi (DEL)</span>
+            </div>
+            <div class="path-line">
+                <div class="duration"><i class="fa-regular fa-clock"></i> 9h 20m</div>
+                <hr>
+            </div>
+            <div class="path-node">
+                <p class="time">15:05</p>
+                <span class="city">Bali (DPS)</span>
+            </div>
+        </div>
+        <div class="price-section">
+            <div class="price-info">
+                <p class="amount">₹32,500</p>
+                <span class="label">per person</span>
+            </div>
+            <button class="select-btn">Select</button>
+        </div>
+    </div>
+
+    <div class="flight-card" data-type="domestic">
+        <div class="airline-info">
+            <div class="airline-logo"><i class="fa-solid fa-plane"></i></div>
+            <div class="airline-meta">
+                <p class="airline-name">SpiceJet</p>
+            </div>
+        </div>
+        <div class="flight-path">
+            <div class="path-node">
+                <p class="time">09:00</p>
+                <span class="city">Jaipur (JAI)</span>
+            </div>
+            <div class="path-line">
+                <div class="duration"><i class="fa-regular fa-clock"></i> 1h 10m</div>
+                <hr>
+            </div>
+            <div class="path-node">
+                <p class="time">10:10</p>
+                <span class="city">Dehradun (DED)</span>
+            </div>
+        </div>
+        <div class="price-section">
+            <div class="price-info">
+                <p class="amount">₹4,200</p>
+                <span class="label">per person</span>
+            </div>
+            <button class="select-btn">Select</button>
+        </div>
+    </div>
+
+    </div>
+
+    <div id="checkout-section" class="checkout-wrapper">
+    <div class="checkout-card">
+        <div class="checkout-left">
+            <h3>Confirm your booking</h3>
+            <p><i class="fa-solid fa-plane-departure"></i> Airline: <span id="display-airline">-</span></p>
+            <p><i class="fa-solid fa-user"></i> Passengers: <span id="display-pax">0</span></p>
+        </div>
+        <div class="checkout-right">
+            <div class="total-box">
+                <span>Total Amount</span>
+                <h2 id="total-price-display">₹<span id="display-total">0</span></h2>
+            </div>
+            <button class="confirm-booking-btn">Proceed to Pay</button>
+        </div>
+    </div>
+</div>
+
+<div class="train-results-container" id="trains-list" style="display: none;">
+    <div class="flight-card"> <div class="airline-info">
+            <div class="airline-logo"><i class="fa-solid fa-train"></i></div>
+            <div class="airline-meta">
+                <p class="airline-name">Shinkansen Nozomi</p>
+                <span class="flight-badge direct">FASTEST</span>
+            </div>
+        </div>
+        <div class="flight-path">
+            <div class="path-node">
+                <p class="time">06:30</p>
+                <span class="city">Tokyo</span>
+            </div>
+            <div class="path-line">
+                <div class="duration"><i class="fa-regular fa-clock"></i> 2h 12m</div>
+                <hr>
+            </div>
+            <div class="path-node">
+                <p class="time">08:42</p>
+                <span class="city">Kyoto</span>
+            </div>
+        </div>
+        <div class="price-section">
+            <div class="price-info">
+                <p class="amount">₹8,200</p>
+                <span class="label">per person</span>
+            </div>
+            <button class="select-btn">Select</button>
+        </div>
+    </div>
+
+    <div class="flight-card">
+        <div class="airline-info">
+            <div class="airline-logo"><i class="fa-solid fa-train-subway"></i></div>
+            <div class="airline-meta">
+                <p class="airline-name">Rajdhani Express</p>
+                <span class="flight-badge best-price">PREMIUM</span>
+            </div>
+        </div>
+        <div class="flight-path">
+            <div class="path-node">
+                <p class="time">16:30</p>
+                <span class="city">New Delhi (NDLS)</span>
+            </div>
+            <div class="path-line">
+                <div class="duration"><i class="fa-regular fa-clock"></i> 15h 50m</div>
+                <hr>
+            </div>
+            <div class="path-node">
+                <p class="time">08:20</p>
+                <span class="city">Mumbai (BCT)</span>
+            </div>
+        </div>
+        <div class="price-section">
+            <div class="price-info">
+                <p class="amount">₹4,550</p>
+                <span class="label">per person</span>
+            </div>
+            <button class="select-btn">Select</button>
+        </div>
+    </div>
+</div>
+
+<div class="bus-results-container" id="buses-list" style="display: none;">
+    <div class="flight-card">
+        <div class="airline-info">
+            <div class="airline-logo"><i class="fa-solid fa-bus"></i></div>
+            <div class="airline-meta">
+                <p class="airline-name">Zingbus Premium</p>
+                <span class="flight-badge direct">AC SLEEPER</span>
+            </div>
+        </div>
+        <div class="flight-path">
+            <div class="path-node">
+                <p class="time">22:00</p>
+                <span class="city">Delhi (ISBT)</span>
+            </div>
+            <div class="path-line">
+                <div class="duration"><i class="fa-regular fa-clock"></i> 8h 30m</div>
+                <hr>
+            </div>
+            <div class="path-node">
+                <p class="time">06:30</p>
+                <span class="city">Manali</span>
+            </div>
+        </div>
+        <div class="price-section">
+            <div class="price-info">
+                <p class="amount">₹1,850</p>
+                <span class="label">per person</span>
+            </div>
+            <button class="select-btn">Select</button>
+        </div>
+    </div>
+
+    <div class="flight-card">
+        <div class="airline-info">
+            <div class="airline-logo"><i class="fa-solid fa-bus-simple"></i></div>
+            <div class="airline-meta">
+                <p class="airline-name">Rajasthan Travels</p>
+                <span class="flight-badge best-price">NON-STOP</span>
+            </div>
+        </div>
+        <div class="flight-path">
+            <div class="path-node">
+                <p class="time">14:00</p>
+                <span class="city">Jaipur</span>
+            </div>
+            <div class="path-line">
+                <div class="duration"><i class="fa-regular fa-clock"></i> 5h 15m</div>
+                <hr>
+            </div>
+            <div class="path-node">
+                <p class="time">19:15</p>
+                <span class="city">Delhi</span>
+            </div>
+        </div>
+        <div class="price-section">
+            <div class="price-info">
+                <p class="amount">₹650</p>
+                <span class="label">per person</span>
+            </div>
+            <button class="select-btn">Select</button>
+        </div>
+    </div>
+</div>
+
+    
+</section>
+<section class="final-booking-section" id="final-booking">
+    <div class="booking-banner">
+        <span class="mini-title">BOOKING</span>
+        <h2 class="banner-heading">Reserve your place in the world.</h2>
+    </div>
+
+    <div class="booking-form-container">
+        <div class="booking-form-left">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>FULL NAME</label>
+                    <div class="input-wrapper" id="nameWrapper">
+                        <i class="fa-regular fa-user"></i>
+                        <input type="text" id="formName" placeholder="Jane Doe" oninput="syncBooking()">
+                    </div>
+                    <span class="error-msg" style="display:none;">Please enter your name</span>
+                </div>
+
+                <div class="form-group">
+                    <label>EMAIL</label>
+                    <div class="input-wrapper" id="emailWrapper">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" id="formEmail" placeholder="jane@example.com" oninput="syncBooking()">
+                    </div>
+                    <span class="error-msg" style="display:none;">Enter a valid email</span>
+                </div>
+
+                <div class="form-group">
+                    <label>DESTINATION</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <select id="formDest" onchange="syncBooking()">
+                            <option value="—">Select a place...</option>
+                            <option value="Santorini, Greece">Santorini, Greece</option>
+                            <option value="Kyoto, Japan">Kyoto, Japan</option>
+                            <option value="Bali, Indonesia">Bali, Indonesia</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>TRAVEL DATE</label>
+                    <div class="input-wrapper" id="dateWrapper">
+                        <i class="fa-regular fa-calendar"></i>
+                        <input type="date" id="formDate" onchange="syncBooking()">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>GUESTS</label>
+                    <div class="stepper-input">
+                        <i class="fa-solid fa-user-group"></i>
+                        <div class="stepper-btns">
+                            <button type="button" onclick="updateGuests(-1)">-</button>
+                            <span id="guest-display">2</span>
+                            <button type="button" onclick="updateGuests(1)">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>PACKAGE</label>
+                    <div class="package-options">
+                        <button type="button" class="pkg-btn" onclick="setPackage(this, 1490)">Essential</button>
+                        <button type="button" class="pkg-btn active" onclick="setPackage(this, 2490)">Signature</button>
+                        <button type="button" class="pkg-btn" onclick="setPackage(this, 3990)">Voyager</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="booking-summary-card">
+    <h3>Booking summary</h3>
+    <div class="summary-list">
+        <div class="summary-item">
+            <span>Package</span> 
+            <strong id="sumPkg">Signature</strong>
+        </div>
+        <div class="summary-item">
+            <span>Destination</span> 
+            <strong id="sumDest">—</strong>
+        </div>
+        <div class="summary-item">
+            <span>Date</span> 
+            <strong id="sumDate">—</strong>
+        </div>
+        <div class="summary-item">
+            <span>Guests</span> 
+            <strong id="sumGuests">2</strong>
+        </div>
+        <div class="summary-item">
+            <span>Per person</span> 
+            <strong id="sumPerPerson">₹2,490</strong>
+        </div>
+    </div>
+    <hr>
+    <div class="total-price">
+        <span>Total</span>
+        <h2 id="sumTotal">₹4,980</h2>
+    </div>
+    <button class="confirm-btn" onclick="validateForm(event)">Confirm booking</button>
+</div>
+</section>
+
+<div id="successModal" class="modal-overlay">
+    <div class="modal-content">
+        <button class="close-modal" onclick="closeModal()">&times;</button>
+        
+        <div class="success-icon">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        
+        <h2>You're going!</h2>
+        <p>Your journey is reserved. We've sent a <br> confirmation to <strong id="displayEmail">user@example.com</strong>.</p>
+        
+        <div class="booking-details-box">
+            <div class="detail-row">
+                <span>Reference</span>
+                <strong>VYR-526FZI</strong>
+            </div>
+            <div class="detail-row">
+                <span>Total</span>
+                <strong id="finalModalTotal">$0</strong>
+            </div>
+        </div>
+        
+        <button class="done-btn" onclick="closeModal()">Done</button>
+    </div>
+</div>
+
+<section class="gallery-section" id="gallery">
+    <div class="gallery-header">
+        <span class="gallery-tag">GALLERY</span>
+        <h1 class="gallery-main-title">
+            Postcards from <br>
+            <span class="orange-text">elsewhere.</span>
+        </h1>
+    </div>
+
+    <div class="gallery-grid-main">
+        
+        <div class="gallery-item large-item">
+            <img src="gallery1.jpg" alt="Cappadocia hot air balloons">
+            <div class="img-caption">Cappadocia hot air balloons</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="gallery2.jpg" alt="Swiss Alps">
+            <div class="img-caption">Swiss Chamonix Alps</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="gallery3.jpg" alt="Venice Sunset">
+            <div class="img-caption">Venice Sunset Coast</div>
+        </div>
+
+        <div class="gallery-item wide-item">
+            <img src="gallery4.jpg" alt="Machu Picchu">
+            <div class="img-caption">Machu Picchu Hidden City</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="bali.jfif" alt="Bali">
+            <div class="img-caption">Bali Green Terraces</div>
+        </div>
+        <div class="gallery-item">
+            <img src="iceland.jfif" alt="Goa">
+            <div class="img-caption">Iceland aurora</div>
+        </div>
+        <div class="gallery-item">
+            <img src="agra.jpg" alt="Agra">
+            <div class="img-caption">Taj Mahal Agra</div>
+        </div>
+        <div class="gallery-item">
+            <img src="jaipur.jpg" alt="Jaipur">
+            <div class="img-caption">Jaipur City Palace</div>
+        </div>
+
+    </div>
+ </section>
+
+ <section class="stories-section">
+    <div class="stories-header">
+        <span class="stories-tag">TRAVELERS</span>
+        <h2 class="stories-main-title">
+            Stories from the <span class="orange-text">road.</span>
+        </h2>
+    </div>
+
+    <div class="testimonial-slider">
+    <div class="slider-container" id="slider">
+        <div class="slide active">
+            <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+            <p class="quote-text">"Voyara found us a tea house in the hills no guide ever mentioned. Six days in and I was already planning to come back."</p>
+            <div class="stars">★★★★★</div>
+            <h4 class="author-name">Mira Patel</h4>
+            <p class="location">Kyoto • Signature</p>
+        </div>
+
+        <div class="slide">
+            <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+            <p class="quote-text">"The trek to the glacier was the closest I've felt to silence. Every detail handled, nothing oversold."</p>
+            <div class="stars">★★★★★</div>
+            <h4 class="author-name">Lucas Beaumont</h4>
+            <p class="location">Patagonia • Voyager</p>
+        </div>
+
+        <div class="slide">
+            <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+            <p class="quote-text">"I travel solo a lot. This was the first time a platform actually felt like a friend who'd been there."</p>
+            <div class="stars">★★★★★</div>
+            <h4 class="author-name">Aiko Tanaka</h4>
+            <p class="location">Marrakech • Essential</p>
+        </div>
+    </div>
+
+    <div class="slider-controls">
+        <button class="nav-btn prev" onclick="moveSlide(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="dots" id="dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+        <button class="nav-btn next" onclick="moveSlide(1)"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+</div>
+    </section>
+
+    <section id="contact" class="contact-section">
+    <div class="contact-container">
+        
+        <div class="contact-info">
+            <span class="contact-tag">CONTACT</span>
+            <h1 class="contact-title">
+                Tell us where you <br>
+                <span class="orange-text">dream</span> of being.
+            </h1>
+            <p class="contact-sub">Our travel concierges respond within a few hours, every day of the week.</p>
+
+            <div class="info-details">
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-regular fa-envelope"></i></div>
+                    <span>hello@voyara.travel</span>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                    <span>+91 98765-43210</span> </div>
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <span>New Delhi • Mumbai • Uttarakhand</span> </div>
+            </div>
+        </div>
+
+        <div class="contact-form-card">
+            <form id="mainContactForm">
+                <div class="form-group">
+                    <label>NAME</label>
+                    <input type="text" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label>EMAIL</label>
+                    <input type="email" placeholder="you@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>MESSAGE</label>
+                    <textarea placeholder="Where would you like to go?" rows="5"></textarea>
+                </div>
+                <button type="submit" class="send-btn">Send Message</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<div id="signInModal" class="auth-modal">
+    <div class="auth-card">
+        <span class="close-x" onclick="closeAuthModal('signInModal')">&times;</span>
+        <div class="auth-content">
+            <h2>Welcome back</h2>
+            <p>Sign in to continue your journey.</p>
+            <form id="loginForm">
+                <div class="input-box">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="input-box">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="auth-submit">Sign in</button>
+            </form>
+            <p class="switch-text">New here? <span onclick="switchModal('signInModal', 'signUpModal')">Create an account</span></p>
+        </div>
+    </div>
+</div>
+
+<div id="signUpModal" class="auth-modal">
+    <div class="auth-card">
+        <span class="close-x" onclick="closeAuthModal('signUpModal')">&times;</span>
+        <div class="auth-content">
+            <h2>Create account</h2>
+            <p>Join Voyara to start exploring.</p>
+            <form id="registerForm">
+                <div class="input-box">
+                    <i class="fa-regular fa-user"></i>
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="input-box">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="input-box">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="auth-submit">Create account</button>
+            </form>
+            <p class="switch-text">Already have an account? <span onclick="switchModal('signUpModal', 'signInModal')">Sign in</span></p>
+        </div>
+    </div>
+</div>
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <div class="footer-logo">
+                <i class="fa-regular fa-compass"></i> Voyara
+            </div>
+            <p class="footer-desc">
+                Slow, considered travel for the curious. Designed <br> 
+                in Lisbon, lived everywhere.
+            </p>
+            <div class="footer-socials">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <h3>Explore</h3>
+            <ul>
+                <li><a href="#explore-section">Destinations</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#final-booking">Book a trip</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-links">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home">Press</a></li>
+                <li><a href="#home">Careers</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Voyara Travel Co. Crafted with wonder.</p>
+        <div class="footer-legal">
+            <a href="#">Privacy</a> • <a href="#">Terms</a> • <a href="#">Cookies</a>
+        </div>
+    </div>
+</footer>
+    <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,2529 @@
+:root {
+   
+    --bg-color: #0b0b0b;
+    --text-color: #ffffff; 
+    --nav-bg: rgba(0, 0, 0, 0.8);
+    --card-bg: #161616;
+    --primary-orange: #ff7d3e;
+    --input-bg: #222222; 
+}
+
+.light-theme {
+ 
+    --bg-color: #fcf9f4; 
+    --text-color: #1a1a1a; 
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    --card-bg: #ffffff;
+    --input-bg: #fdf8f0; 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 25px 2%; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: transparent;
+    transition: 0.4s all ease;
+}
+
+.navbar.scrolled {
+   
+    padding: 15px 2%;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff !important; 
+    transition: color 0.3s ease;
+    padding-left: 10px;
+}
+.navbar.scrolled .logo {
+    color: var(--primary-orange) !important;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff !important; 
+    font-weight: 500;
+}
+
+.navbar.scrolled .nav-links a,
+.navbar.scrolled .icon-btn {
+    color: var(--text-color) !important;
+}
+
+.nav-btns {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: #ffffff; 
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* --- Sign In Button (Orange Theme) --- */
+.sign-in-btn {
+  
+    background: var(--primary-orange);
+    border: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.sign-in-btn:hover {
+    filter: brightness(1.1); /* Hover par thoda glow */
+    transform: translateY(-1px);
+}
+
+.book-now-btn {
+    background: var(--primary-orange);
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* --- HERO SECTION --- */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url('hero 1.jfif'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Fixed dark overlay for contrast */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    color: #ffffff; /* Hero text hamesha white */
+}
+
+.badge {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(0, 0, 0, 0.2);
+    width: max-content;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.badge i {
+    color: var(--primary-orange);
+}
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    line-height: 1.1;
+}
+
+.hero-content h1 span {
+    color: var(--primary-orange);
+    font-style: italic;
+}
+
+.plan-btn {
+    background: var(--primary-orange);
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 30px;
+    font-weight: 600;
+}
+
+/* --- STATS CARD: Hamesha White Text --- */
+.stats-glass {
+    position: absolute;
+    bottom: 50px;
+    right: 8%;
+    background: rgba(0, 0, 0, 0.3); /* Slightly darker for readability */
+    backdrop-filter: blur(15px);
+    display: flex;
+    padding: 25px 40px;
+    border-radius: 20px;
+    gap: 40px;
+    z-index: 2;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff; 
+}
+
+.stat-item h3 {
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+.stat-item p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 1px;
+}
+
+/* --- ABOUT SECTION --- */
+.about-section {
+    padding: 100px 8%;
+    background-color: var(--bg-color);
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.sub-heading {
+    color: var(--primary-orange);
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.about-text h2 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.about-text h2 span {
+    color: var(--primary-orange);
+    font-style: italic;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* --- ABOUT GRID & CARDS --- */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.about-card {
+    background: var(--card-bg);
+    padding: 35px;
+    border-radius: 25px;
+    border: 1px solid rgba(128, 128, 128, 0.1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+    background: var(--bg-color);
+    border-color: var(--primary-orange);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.about-card h3 {
+    margin: 15px 0;
+    font-size: 1.5rem;
+}
+
+.about-card p {
+    font-size: 0.95rem;
+    opacity: 0.7;
+    line-height: 1.5;
+}
+
+.card-icon {
+    width: 55px;
+    height: 55px;
+    background: rgba(255, 125, 62, 0.1);
+    color: var(--primary-orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+}
+
+.about-card:hover .card-icon {
+    background: var(--primary-orange);
+    color: white;
+    transform: rotate(10deg);
+}
+
+.fa-shield-check, .fa-shield-halved, .fa-shield-heart {
+    display: inline-block !important;
+}
+
+/* --- STICKY SCROLL TOP BUTTON --- */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-orange);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    z-index: 2000;
+    box-shadow: 0 5px 15px rgba(255, 125, 62, 0.4);
+    transition: 0.3s ease;
+}
+
+.scroll-top-btn:hover {
+    transform: translateY(-5px) scale(1.1);
+}
+
+.dark-theme .about-card:hover {
+    background: #1a1a1a;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* --- EXPLORE SECTION --- */
+.explore-section {
+    padding: 80px 8%;
+    background-color: var(--bg-color);
+}
+
+.explore-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Split into Headline and Search */
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.headline-group h2 {
+    font-size: 3.8rem;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.headline-group h2 span {
+    color: var(--primary-orange);
+    font-style: italic;
+}
+
+/* Search Bar Styling */
+.search-container {
+    position: relative;
+    width: 100%;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 20px 25px 20px 60px; /* Space for icon */
+    border-radius: 50px;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    background: var(--card-bg);
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-family: 'Playfair Display', serif;
+    transition: 0.3s ease;
+}
+
+.search-container input:focus {
+    outline: none;
+    border-color: var(--primary-orange);
+    box-shadow: 0 5px 15px rgba(255, 125, 62, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(128, 128, 128, 0.6);
+    font-size: 1.3rem;
+    transition: 0.3s ease;
+}
+
+.search-container input:focus + .search-icon {
+    color: var(--primary-orange);
+}
+
+/* --- FILTER TAGS (Including India) --- */
+.filter-tags {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 60px;
+    flex-wrap: wrap; /* Responsive on smaller screens */
+}
+
+.tag {
+    padding: 12px 28px;
+    background: var(--card-bg);
+    border: 1px solid rgba(128, 128, 128, 0.1);
+    color: var(--text-color);
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Playfair Display', serif;
+}
+
+.tag:hover {
+    border-color: var(--primary-orange);
+    color: var(--primary-orange);
+    transform: translateY(-2px);
+}
+
+/* Standard Active Tag Style (Dark Background, White Text) */
+.active-tag {
+    background: #112d26; /* Dark Teal, matching standard 'All' tag from images */
+    color: #ffffff;
+    border-color: #112d26;
+}
+
+.active-tag:hover {
+    color: #ffffff; /* Override hover style for active tag */
+}
+
+/* --- DESTINATION GRID & CARDS --- */
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.destination-card {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    height: 380px; /* Consistent card height */
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.destination-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+
+/* Card Information Overlay */
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0.4s ease;
+}
+
+.destination-card .category {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+.destination-card .location {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+/* --- HOVER EFFECTS FOR DESTINATION CARDS --- */
+.destination-card:hover {
+    transform: scale(1.02);
+}
+
+.destination-card:hover img {
+    transform: scale(1.1); /* Zoom effect */
+}
+
+/* --- ACTIVE CARD STYLE (Standard Kyoto Style) --- */
+.active-card {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.light-theme .active-tag {
+    background: #000000; /* Force black active tag on light theme */
+    color: #ffffff;
+    border-color: #000000;
+}
+
+
+/* Destination Grid Fix: Card layout matches image */
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.destination-card {
+    position: relative;
+    height: 450px; /* Bada height image ke hisab se */
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+/* Category Tag (Tropical, Cultural etc.) */
+.card-tag {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 6px 15px;
+    border-radius: 50px;
+    font-size: 12px;
+    z-index: 5;
+}
+
+/* Kyto style white arrow icon */
+.arrow-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: white;
+    color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    font-size: 14px;
+}
+
+/* Text Overlay Bottom */
+.card-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    padding: 25px;
+    justify-content: flex-end;
+}
+
+.location-sub {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.location-name {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* --- EXPLORE SECTION: SEARCH & PRICE --- */
+
+/* Price Row Layout */
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+    margin-top: 10px;
+}
+
+/* "FROM" Text Styling */
+.price-row span:first-child {
+    font-size: 10px;
+    letter-spacing: 2px;
+    opacity: 0.7;
+    text-transform: uppercase;
+}
+
+/* Price Value with Automatic Rupee Symbol */
+.price-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-orange);
+    display: flex;
+    align-items: center;
+    gap: 4px; /* Space between ₹ and Number */
+    font-family: Arial, sans-serif; /* For better number/symbol rendering */
+}
+
+/* Rupee Symbol Injection (Pseudo-element) */
+.price-value::before {
+    content: "₹"; 
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+/* --- NO RESULTS MESSAGE STYLING --- */
+#noResults {
+    grid-column: 1 / -1; /* Grid mein center dikhne ke liye */
+    text-align: center;
+    padding: 60px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    opacity: 0.6;
+    border: 1px dashed rgba(128, 128, 128, 0.3);
+    border-radius: 25px;
+    margin-top: 30px;
+}
+
+/* Dark/Light mode check for No Results border */
+.light-theme {
+    /* Pehle wale colors ke saath ise update karein */
+    --bg-color: #fdf8f0; /* Soft Cream background as per image */
+    --text-color: #1a1a1a;
+    --card-bg: #ffffff; /* Cards ko pure white rakhein taaki wo cream bg par ubar kar dikhen */
+    --nav-bg: rgba(253, 248, 240, 0.95);
+}
+.dark-theme #noResults {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* --- PACKAGES SECTION REFINEMENT --- */
+.packages-section {
+    padding: 80px 8%;
+    background-color: var(--bg-color);
+}
+
+.packages-header {
+    margin-bottom: 50px;
+}
+
+.tour-tag {
+    color: var(--primary-orange);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.packages-header h2 {
+    font-size: 4rem; /* Image jaisa bada size */
+    font-weight: 800;
+    line-height: 1.1;
+    color: #1a1a1a;
+}
+
+.packages-header h2 span {
+    color: var(--primary-orange);
+    font-style: italic; /* "travel slow" italic mein */
+    font-weight: 400;
+}
+
+/* --- COMPACT CARDS --- */
+.packages-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    align-items: flex-start; /* Isse cards apni content height hi lenge */
+}
+
+.package-card {
+    background: #ffffff;
+    border-radius: 35px;
+    padding: 35px 30px; /* Padding kam ki taaki height choti ho */
+    border: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    min-height: 520px; /* Ek standard choti height set ki hai */
+}
+
+.package-card.highlighted {
+    background: #00332b;
+    color: #ffffff;
+    transform: scale(1.03); /* Slight scale taaki height bohot zyada na badhe */
+}
+
+.package-card h3 {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+
+.package-card .days {
+    font-size: 0.95rem;
+    opacity: 0.7;
+    margin-bottom: 25px;
+}
+
+.package-price {
+    font-size: 2.8rem; /* Price thoda compact */
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.package-price .per-person {
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+/* Features List (Compact) */
+.features {
+    list-style: none;
+    margin-bottom: 30px;
+    flex-grow: 1; /* Space manage karne ke liye */
+}
+
+.features li {
+    margin-bottom: 12px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.features i {
+    color: var(--primary-orange);
+    font-size: 0.8rem;
+}
+
+/* Buttons (Matching Image) */
+.select-btn {
+    width: 100%;
+    padding: 16px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: auto; /* Button hamesha niche rahega */
+}
+
+.btn-dark { background: #000; color: #fff; }
+.btn-orange { background: var(--primary-orange); color: #fff; }
+
+/* --- STAY SECTION --- */
+.stay-section {
+    padding: 100px 8%;
+    background-color: var(--bg-color); /* Cream Background */
+}
+
+.stay-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Bottom se align karne ke liye */
+    margin-bottom: 60px;
+    gap: 40px;
+}
+
+.stay-title {
+    max-width: 600px;
+}
+
+.stay-title h2 {
+    font-size: 4.5rem;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    color: #1a1a1a;
+}
+
+.stay-title h2 span {
+    color: var(--primary-orange);
+}
+
+.stay-title p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    opacity: 0.8;
+    color: #1a1a1a;
+}
+
+/* Stay Filters Positioning */
+.stay-filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px; /* Align with bottom of paragraph */
+}
+
+.stay-tag {
+    padding: 12px 30px;
+    border-radius: 50px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: #fff;
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.active-stay {
+    background: #001511; /* Dark Teal matching image */
+    color: #fff;
+    border-color: #001511;
+}
+
+/* Stay Grid & Cards */
+.stay-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.stay-card {
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.stay-img {
+    height: 400px;
+    width: 100%;
+    position: relative;
+}
+
+.stay-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.stay-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Badge on Image (Boutique, Heritage etc.) */
+.stay-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #000;
+}
+
+/* Dark Mode Tweaks */
+.dark-theme .stay-tag:not(.active-stay) {
+    background: #1a1a1a;
+    color: #fff;
+    border-color: rgba(255,255,255,0.1);
+}
+
+
+
+
+
+/* --- STAY SECTION GRID --- */
+.stay-section { padding: 80px 8%; background-color: var(--bg-color); }
+
+.stay-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.stay-card {
+    background: #ffffff;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.stay-img-box { height: 260px; position: relative; overflow: hidden; }
+.stay-img-box img { width: 100%; height: 100%; object-fit: cover; }
+
+.stay-badge {
+    position: absolute; top: 15px; left: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 5px 15px; border-radius: 50px;
+    font-size: 11px; font-weight: 700; color: #000;
+}
+
+/* Card Body Layout */
+.stay-body { padding: 25px; }
+
+.stay-top-row {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 8px;
+}
+
+.stay-top-row h3 { font-size: 1.6rem; font-family: 'Playfair Display', serif; color: #1a1a1a; }
+
+.rating { color: #f39c12; font-weight: 700; font-size: 14px; display: flex; align-items: center; gap: 5px; }
+
+.stay-loc { font-size: 13px; color: #666; display: flex; align-items: center; gap: 6px; margin-bottom: 20px; }
+
+/* Footer: Price & Button Row */
+.stay-footer {
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid rgba(0,0,0,0.05); padding-top: 15px;
+}
+
+.stay-price .val { font-size: 1.8rem; font-weight: 700; color: #1a1a1a; }
+.stay-price .unit { font-size: 12px; color: #777; margin-left: 4px; }
+
+.reserve-btn {
+    background: #001511; /* Image wala dark green/black */
+    color: white; padding: 10px 22px;
+    border-radius: 50px; border: none;
+    font-weight: 600; cursor: pointer; transition: 0.3s;
+}
+
+.reserve-btn:hover { background: var(--primary-orange); transform: translateY(-2px); }
+
+/* --- DARK MODE --- */
+.dark-theme .stay-card { background: #161616; border-color: rgba(255,255,255,0.08); }
+.dark-theme .stay-top-row h3, .dark-theme .stay-price .val { color: #fff; }
+.dark-theme .stay-loc, .dark-theme .stay-price .unit { color: rgba(255,255,255,0.5); }
+.dark-theme .reserve-btn { background: #ffffff; color: #000; }
+.dark-theme .stay-footer { border-color: rgba(255,255,255,0.1); }
+
+
+/* --- DARK MODE TEXT VISIBILITY FIX --- */
+
+/* Jab body par .dark-theme class ho, tab headings ko white karo */
+.dark-theme .packages-header h2,
+.dark-theme .stay-title h2 {
+    color: #ffffff !important;
+}
+
+/* "travel slow" aur "quiet corners" jaise orange spans ko orange hi rehne do */
+.dark-theme .packages-header h2 span,
+.dark-theme .stay-title h2 span {
+    color: var(--primary-orange);
+}
+
+/* Description text ko light gray karo taaki wo visible ho */
+.dark-theme .packages-header p,
+.dark-theme .stay-title p,
+.dark-theme .package-card .days {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* --- PACKAGE CARDS INTERNAL TEXT --- */
+
+/* Essential aur Voyager (White cards) ke andar ka text black hi rehna chahiye */
+.dark-theme .package-card:not(.highlighted) h3,
+.dark-theme .package-card:not(.highlighted) .package-price,
+.dark-theme .package-card:not(.highlighted) .features li {
+    color: #1a1a1a; /* Pure black text inside light cards */
+}
+
+/* Signature (Dark Green Card) ke andar ka text hamesha white rehna chahiye */
+.dark-theme .package-card.highlighted h3,
+.dark-theme .package-card.highlighted .package-price,
+.dark-theme .package-card.highlighted .features li {
+    color: #ffffff;
+}
+
+/* List icons (Checks) ko orange rakho */
+.dark-theme .features i {
+    color: var(--primary-orange);
+}
+/* --- 1. HEADER STYLING (Centering + Variables) --- */
+.booking-header {
+    text-align: center;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.main-title {
+    color: var(--text-color); /* Variables linked */
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.highlight-text {
+    color: var(--primary-orange);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.mini-title {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #888;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Dark Mode Mini Title Adjustment */
+.dark-theme .mini-title {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* --- 2. MODES TABS (Centering) --- */
+.mode-tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 30px 0 40px 0;
+    width: 100%;
+}
+
+.mode-btn {
+    padding: 12px 25px;
+    border-radius: 50px;
+    border: none;
+    background: var(--input-bg); /* Variable linked */
+    color: var(--text-color);   /* Variable linked */
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.mode-btn.active {
+    background: #001511; /* Voyara Dark Green stays constant */
+    color: #fff;
+}
+
+/* --- 3. SEARCH BAR CONTAINER (Variable-based) --- */
+.booking-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: var(--card-bg); /* Variable linked */
+    border-radius: 35px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.04);
+}
+
+.search-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1.2fr 0.8fr; 
+    gap: 20px;
+    align-items: flex-end;
+}
+
+/* --- 4. INPUTS & STEPPER --- */
+.input-box {
+    position: relative; /* Calendar overlap fix */
+}
+
+.input-box label {
+    display: block;
+    font-size: 10px;
+    font-weight: 800;
+    color: #999;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.field, .stepper-field {
+    background-color: var(--input-bg); /* Variable linked */
+    padding: 0 18px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 60px;
+}
+
+.field input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-color); /* Variable linked */
+}
+/* --- 5. CALENDAR CLICK FIX (Updated) --- */
+
+.input-box, .input-wrapper {
+    position: relative; /* Calendar ko iske bahar jane se rokega */
+    z-index: 1;
+}
+
+.input-box input[type="date"], 
+.input-wrapper input[type="date"] {
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+/* Calendar picker ko sirf right side ke chote area mein rakho */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    position: absolute;
+    right: 15px; /* Left se hata kar Right mein kiya */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35px;  /* Poore box par nahi, sirf 35px area mein */
+    height: 35px;
+    opacity: 0;   /* Icon FontAwesome wala dikhega, click yahan hoga */
+    z-index: 10;  /* Input text ke upar rahega */
+}
+
+/* Form ke baaki buttons ko sabse upar layer par rakho */
+.pkg-btn, .confirm-btn, .stepper-btns button, .mode-btn {
+    position: relative !important;
+    z-index: 100 !important; /* Isse calendar kabhi overlap nahi kar payega */
+}
+
+/* --- 6. STEPPER & BUTTON --- */
+.stepper-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
+}
+
+.stepper-controls button {
+    border: none;
+    background: rgba(0, 0, 0, 0.05); /* Subtle background */
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--primary-orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+/* Dark mode stepper button background adjust */
+.dark-theme .stepper-controls button {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.main-search-btn {
+    width: 100%;
+    height: 60px;
+    background: var(--primary-orange);
+    color: #fff;
+    border-radius: 18px;
+    border: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.main-search-btn:hover { 
+    background: #e65c00; 
+    transform: translateY(-2px); 
+}
+
+.flight-results-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.flight-card {
+    background: var(--card-bg); /* Variable linked */
+    border-radius: 30px;
+    padding: 25px 40px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1.2fr 2fr 1fr; /* Image wala same layout */
+    align-items: center;
+    gap: 30px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.03);
+    border: 1px solid rgba(0,0,0,0.02);
+    transition: 0.3s ease;
+}
+
+.flight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+}
+
+/* Airline Info */
+.airline-info { display: flex; align-items: center; gap: 20px; }
+.airline-logo {
+    width: 50px; height: 50px;
+    background: rgba(0,0,0,0.04);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+}
+.airline-name { font-size: 1.3rem; font-weight: 700; color: var(--text-color); }
+
+.flight-badge {
+    font-size: 10px; font-weight: 800; padding: 4px 12px;
+    border-radius: 50px; display: inline-block; margin-top: 5px;
+}
+.direct { color: #ff7a45; background: #fff1eb; }
+.best-price { color: #2ecc71; background: #eafaf1; }
+
+/* Flight Path logic */
+.flight-path { display: flex; align-items: center; justify-content: space-between; text-align: center; }
+.path-node .time { font-size: 1.8rem; font-weight: 800; color: var(--text-color); }
+.path-node .city { font-size: 12px; color: #888; font-weight: 500; }
+
+.path-line { flex: 1; margin: 0 30px; position: relative; }
+.path-line .duration { font-size: 11px; color: #999; margin-bottom: 5px; display: flex; align-items: center; justify-content: center; gap: 5px; }
+.path-line hr { border: none; height: 1px; background: #ddd; }
+
+/* Price Section */
+.price-section { display: flex; align-items: center; gap: 30px; justify-content: flex-end; }
+.amount { font-size: 2rem; font-weight: 800; color: var(--text-color); }
+.price-info .label { font-size: 11px; color: #999; display: block; text-align: right; }
+
+.select-btn {
+    background: #002b26; /* Dark Green like image */
+    color: #fff; padding: 14px 40px;
+    border-radius: 50px; border: none;
+    font-weight: 700; cursor: pointer;
+    transition: 0.3s;
+}
+
+.select-btn:hover { background: var(--primary-orange); }
+
+/* Dark Theme Fixes */
+.dark-theme .airline-logo { background: rgba(255,255,255,0.1); }
+.dark-theme .flight-card { border-color: rgba(255,255,255,0.05); }
+.dark-theme .select-btn { background: #fff; color: #000; }
+
+.checkout-wrapper {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    display: none; /* Default hidden */
+}
+
+.checkout-wrapper.active {
+    display: block;
+    animation: fadeInUp 0.5s ease;
+}
+
+.checkout-card {
+    background: #001511; /* Voyara Dark Green */
+    color: #fff;
+    padding: 40px;
+    border-radius: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 20px 40px rgba(0,21,17,0.3);
+}
+
+.checkout-left h3 { font-size: 1.8rem; margin-bottom: 15px; }
+.checkout-left p { font-size: 1.1rem; margin-bottom: 8px; color: rgba(255,255,255,0.8); }
+.checkout-left span { color: var(--primary-orange); font-weight: 700; }
+
+.checkout-right { text-align: right; }
+.total-box span { font-size: 12px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; }
+.total-box h2 { font-size: 2.5rem; color: #fff; margin-bottom: 20px; }
+
+.confirm-booking-btn {
+    background: var(--primary-orange);
+    color: #fff;
+    padding: 15px 45px;
+    border-radius: 50px;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.confirm-booking-btn:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(255,125,62,0.4); }
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ensure result containers are properly spaced */
+.flight-results-container, #trains-list {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Hide trains by default */
+#trains-list {
+    display: none;
+}
+
+/* Container spacing and default state */
+.flight-results-container, #trains-list, #buses-list {
+    width: 100%;
+    margin-top: 20px;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.final-booking-section {
+    padding: 100px 8%;
+    background: linear-gradient(to bottom, var(--primary-orange), #ff6a3d);
+    position: relative;
+}
+
+.booking-banner { text-align: center; color: #fff; margin-bottom: 60px; }
+.banner-heading { font-size: 4.5rem; font-weight: 800; }
+
+.booking-form-container {
+    background: #fff;
+    border-radius: 40px;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+}
+
+/* Form Styling */
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px 40px; }
+.form-group label { display: block; font-size: 11px; font-weight: 800; color: #888; letter-spacing: 1.5px; margin-bottom: 12px; }
+
+.input-wrapper, .stepper-input {
+    background: #fdf8f0;
+    border: 1px solid transparent;
+    padding: 15px 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: 0.3s;
+}
+
+/* Error State */
+.input-wrapper.error { border-color: #e74c3c; }
+.error-msg { color: #e74c3c; font-size: 11px; margin-top: 8px; display: block; font-weight: 600; }
+
+.input-wrapper input, .input-wrapper select { border: none; background: transparent; outline: none; width: 100%; font-size: 1.1rem; font-weight: 600; }
+
+/* Package Buttons */
+.package-options { display: flex; gap: 10px; }
+.pkg-btn {
+    flex: 1; padding: 15px; border-radius: 15px; border: none;
+    background: #fdf8f0; font-weight: 700; cursor: pointer; transition: 0.3s;
+}
+.pkg-btn.active { background: #002b26; color: #fff; }
+
+/* Summary Card */
+.booking-summary-card {
+    background: #fdf8f0;
+    padding: 40px;
+    border-radius: 30px;
+}
+
+.booking-summary-card h3 { font-size: 2rem; margin-bottom: 30px; }
+.summary-item { display: flex; justify-content: space-between; margin-bottom: 18px; font-size: 1.1rem; }
+.summary-item span { color: #777; }
+
+.total-price { display: flex; justify-content: space-between; align-items: center; margin: 30px 0; }
+.total-price h2 { font-size: 2.5rem; font-weight: 800; }
+
+.confirm-btn {
+    width: 100%; background: var(--primary-orange); color: #fff;
+    padding: 20px; border-radius: 25px; border: none;
+    font-size: 1.3rem; font-weight: 700; cursor: pointer; transition: 0.3s;
+}
+
+.confirm-btn:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(255,125,62,0.3); }
+
+/* Dark Mode Support */
+.dark-theme .booking-form-container { background: #1a1a1a; }
+.dark-theme .input-wrapper, .dark-theme .pkg-btn, .dark-theme .booking-summary-card { background: #252525; color: #fff; }
+.dark-theme .input-wrapper input { color: #fff; }
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Background blur effect */
+    display: none; /* Initially Hidden */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+/* Modal Box */
+.modal-content {
+    background: #fff;
+    padding: 40px;
+    border-radius: 35px;
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    position: relative;
+    animation: popIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes popIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.success-icon {
+    width: 70px; height: 70px;
+    background: #fff1eb; color: var(--primary-orange);
+    font-size: 30px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.modal-content h2 { font-size: 2.2rem; margin-bottom: 10px; font-family: 'Playfair Display', serif; }
+.modal-content p { color: #666; line-height: 1.5; margin-bottom: 25px; }
+
+.booking-details-box {
+    background: #fdf8f0;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.detail-row {
+    display: flex; justify-content: space-between;
+    margin-bottom: 10px; font-size: 14px;
+}
+.detail-row span { color: #888; }
+
+.done-btn {
+    width: 100%; background: #002b26; color: #fff;
+    padding: 15px; border-radius: 50px; border: none;
+    font-size: 1.1rem; font-weight: 700; cursor: pointer;
+}
+
+.close-modal {
+    position: absolute; top: 20px; right: 20px;
+    background: none; border: none; font-size: 24px; color: #999; cursor: pointer;
+}
+
+/* --- Dark Theme Colors for Reserve Section --- */
+
+/* 1. Pure Section Background */
+.dark-theme .final-booking-section {
+    background: linear-gradient(to bottom, #1a1a1a, #000000);
+}
+
+/* 2. Main Form Container */
+.dark-theme .booking-form-container {
+    background: #242424; /* Deep Grey */
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* 3. Input Wrappers & Stepper */
+.dark-theme .input-wrapper, 
+.dark-theme .stepper-input,
+.dark-theme .pkg-btn {
+    background: #2d2d2d;
+    border: 1px solid #3d3d3d;
+}
+
+/* 4. Text & Input Colors */
+.dark-theme .input-wrapper input,
+.dark-theme .input-wrapper select,
+.dark-theme .stepper-btns span,
+.dark-theme .pkg-btn,
+.dark-theme .booking-summary-card h3,
+.dark-theme .total-price h2,
+.dark-theme .summary-item strong {
+    color: #ffffff;
+}
+
+.dark-theme .form-group label {
+    color: #aaaaaa; /* Muted grey for labels */
+}
+
+/* 5. Summary Card (Right Side) */
+.dark-theme .booking-summary-card {
+    background: #1d1d1d;
+    border: 1px solid #333333;
+}
+
+.dark-theme .summary-item span {
+    color: #888888;
+}
+
+/* 6. Hover & Active States */
+.dark-theme .pkg-btn:hover {
+    background: #3d3d3d;
+}
+
+.dark-theme .pkg-btn.active {
+    background: var(--primary-orange); /* Orange active state looks great in dark mode */
+    color: #fff;
+    border-color: var(--primary-orange);
+}
+
+/* 7. Icons Fix */
+.dark-theme .input-wrapper i,
+.dark-theme .stepper-input i {
+    color: var(--primary-orange);
+}
+
+
+.gallery-section {
+    /* Margin/Padding kam ki gayi hai (Top Right Bottom Left) */
+    padding: 60px 4% 20px 4%; 
+    background-color: #fdf8f0;
+    transition: background-color 0.3s ease;
+}
+
+.gallery-header {
+    margin-bottom: 40px;
+    padding-left: 10px; /* Text ko images ki line mein laane ke liye */
+}
+.gallery-tag {
+    color: #ff7d3e;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+.gallery-main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 50px; /* Thoda sa adjust kiya wide screen ke liye */
+    line-height: 1.1;
+    font-weight: 800;
+    color: #1a1a1a;
+}
+
+.orange-text {
+    color: #ff7d3e;
+}
+
+/* Dark Theme Support */
+.dark-theme .gallery-section {
+    background-color: #121212;
+}
+
+.dark-theme .gallery-main-title {
+    color: #ffffff;
+}
+/*============= Gallery Section Wrapper =============*/
+.gallery-section {
+    padding: 60px 4% 40px 4%; /* Left-Right margin kam rakhi hai wide look ke liye */
+    background-color: #fdf8f0;
+    transition: background-color 0.3s ease;
+}
+
+/* Main Grid Container */
+.gallery-grid-main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    /* Pehli 2 rows 260px ki (compact) aur 3rd row 300px ki (Indian images ke liye) */
+    grid-template-rows: repeat(2, 260px) 300px; 
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Base Style for All Gallery Items */
+.gallery-item {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #eee; /* Image load hone tak placeholder */
+}
+
+/*--- Specific Grid Placements ---*/
+
+/* 1. Left Badi Image: 2 columns aur 2 rows cover karegi */
+.large-item {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+}
+
+/* 2. Top-Right Wide Image: 3rd aur 4th column cover karegi */
+.wide-item {
+    grid-column: 3 / 5;
+    grid-row: 2; /* Ye 2nd row mein set hogi */
+}
+
+/* 3. Bottom 4 Images (Bali, Goa, Agra, Jaipur): Inhe 3rd row mein line se set kiya gaya hai */
+.gallery-grid-main > .gallery-item:nth-child(n+5) {
+    grid-row: 3;
+    height: 300px;
+}
+
+/*--- Image Styling ---*/
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*--- Hover Effects ---*/
+.gallery-item:hover img {
+    transform: scale(1.08); 
+}
+
+/*--- Caption Slide-up ---*/
+.img-caption {
+    position: absolute;
+    bottom: -70px; 
+    left: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 12px 20px;
+    border-radius: 15px;
+    font-weight: 600;
+    color: #333;
+    transition: all 0.4s ease-out;
+    font-size: 14px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    white-space: nowrap;
+}
+
+.gallery-item:hover .img-caption {
+    bottom: 20px; /* Hover karne par smooth upar aayega */
+}
+
+/*============= Dark Mode Support =============*/
+.dark-theme .gallery-section {
+    background-color: #121212;
+}
+
+.dark-theme .img-caption {
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/*============= Stories Section (New) =============*/
+.stories-section {
+    padding: 100px 4%;
+    background-color: #002b26; /* Exact dark green color jaisa image mein hai */
+    text-align: center; /* Sab kuch center karne ke liye */
+    transition: all 0.3s ease;
+}
+
+.stories-header {
+    margin-bottom: 60px;
+}
+
+.stories-tag {
+    color: #ff7d3e; /* Orange color */
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.stories-main-title {
+    font-family: 'Playfair Display', serif; /* Elegant Serif Font */
+    font-size: 65px;
+    font-weight: 800;
+    color: #ffffff; /* White text */
+    line-height: 1.1;
+    margin: 0;
+}
+
+.stories-main-title .orange-text {
+    color: #ff7d3e; /* road. word orange rahega */
+}
+
+/* Responsive (Mobile ke liye font size adjust) */
+@media (max-width: 768px) {
+    .stories-main-title {
+        font-size: 45px;
+    }
+}
+.testimonial-slider {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    text-align: center;
+    padding: 20px;
+    opacity: 0.3; /* Non-active slides kam dikhengi */
+    transition: opacity 0.6s;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.quote-icon {
+    font-size: 50px;
+    color: #4a3728; /* Brownish color jaisa image mein hai */
+    margin-bottom: 30px;
+}
+
+.quote-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    line-height: 1.4;
+    margin-bottom: 30px;
+}
+
+.stars {
+    color: #ff7d3e;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.author-name {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.location {
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+/* Controls Styling */
+.slider-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 20px;
+}
+
+.nav-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.nav-btn:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.dots {
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.dot.active {
+    width: 35px; /* Orange long pill shape */
+    border-radius: 10px;
+    background: #ff7d3e;
+}
+
+/* --- Slider Dark Mode Enhancements --- */
+
+/* Jab body par .dark-theme class ho */
+.dark-theme .stories-section {
+    background-color: #001a17; /* Aur bhi gehra dark green */
+}
+
+.dark-theme .nav-btn {
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.dark-theme .quote-text {
+    color: #ffffff;
+}
+
+.dark-theme .dot {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Quote Icon Color Fix */
+.quote-icon i {
+    color: #4a3728; /* Brown color jaisa image mein hai */
+}
+
+.dark-theme .quote-icon i {
+    color: #8b7355; /* Dark mode mein thoda light brown taaki dikhe */
+}
+
+/*============= Contact Section =============*/
+.contact-section {
+    padding: 100px 8%;
+    background-color: #fdf8f0; /* Same beige background */
+    transition: all 0.3s ease;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+/* Left Content */
+.contact-info {
+    flex: 1;
+}
+
+.contact-tag {
+    color: #ff7d3e;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.contact-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+    font-weight: 800;
+    color: #1a1a1a;
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.contact-sub {
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 40px;
+    max-width: 450px;
+}
+
+.info-details {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #1a1a1a;
+}
+
+.info-icon {
+    width: 50px;
+    height: 50px;
+    background: #fbe6d8; /* Light orange tint */
+    color: #ff7d3e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+/* Right Form Card */
+.contact-form-card {
+    flex: 1;
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 40px; /* Rounded corners jaisa image mein hai */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    max-width: 550px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #4a5568;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    font-size: 16px;
+    background: #fdfdfd;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: #ff7d3e;
+    background: #fff;
+}
+
+.send-btn {
+    width: 100%;
+    background: #ff7d3e;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.send-btn:hover {
+    background: #e66a2e;
+    transform: translateY(-2px);
+}
+
+/* Dark Mode Support */
+.dark-theme .contact-section { background-color: #121212; }
+.dark-theme .contact-title { color: #fff; }
+.dark-theme .contact-sub, .dark-theme .info-item { color: #ccc; }
+.dark-theme .contact-form-card { background: #1a1a1a; }
+.dark-theme .form-group label { color: #aaa; }
+.dark-theme .form-group input, .dark-theme .form-group textarea { 
+    background: #252525; border-color: #333; color: #fff; 
+}
+
+/*============= AUTH MODAL STYLES =============*/
+/* Auth Modals Base */
+.auth-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+.auth-card {
+    background: #fff;
+    width: 90%;
+    max-width: 450px;
+    margin: 100px auto;
+    padding: 40px;
+    border-radius: 40px; /* Extra rounded jaisa image mein hai */
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.close-x {
+    position: absolute;
+    right: 25px; top: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #444;
+}
+
+.auth-content { text-align: center; }
+
+.auth-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 5px;
+    color: #001a1a;
+}
+
+.auth-content p {
+    color: #555;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+/* Input Styling */
+.input-box {
+    background: #fdf8f1; /* Light beige background jaisa image m h */
+    border: 1px solid #f1e6d8;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+}
+
+.input-box i {
+    color: #444;
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+.input-box input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+}
+
+/* Orange Button */
+.auth-submit {
+    background: #ff7d3e;
+    color: #fff;
+    width: 100%;
+    padding: 18px;
+    border: none;
+    border-radius: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.auth-submit:hover { background: #e66a2e; }
+
+/* Switch Text */
+.switch-text {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.switch-text span {
+    color: #ff7d3e;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/*============= FOOTER SECTION =============*/
+.main-footer {
+    background-color: #001a17; /* Dark emerald green background */
+    padding: 100px 8% 40px 8%;
+    color: #ffffff;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-bottom: 80px;
+}
+
+.footer-brand {
+    flex: 2;
+    min-width: 300px;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    font-family: 'Playfair Display', serif;
+}
+
+.footer-logo i {
+    color: #ff7d3e; /* Orange Compass Icon */
+}
+
+.footer-desc {
+    color: #b0b0b0;
+    line-height: 1.6;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-socials a {
+    width: 45px;
+    height: 45px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-socials a:hover {
+    background: #ff7d3e;
+    border-color: #ff7d3e;
+    transform: translateY(-3px);
+}
+
+/* Links Columns */
+.footer-links {
+    flex: 1;
+    min-width: 150px;
+}
+
+.footer-links h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 12px;
+}
+
+.footer-links ul li a {
+    color: #b0b0b0;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #ff7d3e;
+    padding-left: 5px;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #888;
+    font-size: 14px;
+}
+
+.footer-legal a {
+    color: #888;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer-legal a:hover {
+    color: #fff;
+}
+/* --- GLOBAL FIXES --- */
+html, body {
+    overflow-x: hidden; 
+    box-sizing: border-box;
+}
+
+/* --- DESKTOP DEFAULT SETTINGS --- */
+.menu-icon {
+    display: none; /* Desktop par hidden */
+}
+
+.mobile-only-item {
+    display: none; /* Mobile button hidden on desktop */
+}
+
+/* Container jo boxes ko ek line mein layega */
+.search-grid {
+    display: flex;
+    align-items: stretch; /* Taaki sab boxes ki height barabar ho */
+    gap: 12px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    flex-wrap: nowrap; /* Desktop par ek hi line mein rakhne ke liye */
+}
+
+/* Har ek box (From, To, Date, Passengers) */
+.input-box {
+    background: #fdf8f1;
+    border-radius: 15px;
+    padding: 10px 18px;
+    flex: 1; /* Sabko barabar width dene ke liye */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 150px;
+}
+
+/* Labels (FROM, TO, etc) */
+.input-box label {
+    font-size: 10px;
+    font-weight: 800;
+    color: #a0a0a0;
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+}
+
+/* Input field aur Stepper field (Icons + Text) */
+.field, .stepper-field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.field i, .stepper-field i {
+    color: #333;
+    font-size: 14px;
+}
+
+.field input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    color: #1a1a1a;
+}
+
+/* Passengers Stepper Controls Fix */
+.stepper-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto; /* Buttons ko right side push karne ke liye */
+}
+
+.stepper-controls button {
+    background: #f3ece4;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Search Button Box */
+.action-box {
+    display: flex;
+    align-items: center;
+}
+
+.main-search-btn {
+    background: #ff7d3e;
+    color: white;
+    border: none;
+    padding: 0 35px;
+    height: 100%; /* Box ki height ke barabar */
+    min-height: 55px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* --- Mobile Fix --- */
+@media screen and (max-width: 1024px) {
+    .search-grid {
+        flex-wrap: wrap; /* Choti screen par niche shift ho jayenge */
+    }
+    .input-box {
+        min-width: 45%; /* Tablet par 2-2 boxes dikhenge */
+    }
+    .action-box {
+        width: 100%;
+    }
+    .main-search-btn {
+        width: 100%;
+    }
+}
+
+/* ================================================================
+   1. TABLETS & SMALL DESKTOPS (Max-width: 1024px)
+   ================================================================ */
+@media (max-width: 1024px) {
+    .about-container, 
+    .explore-header, 
+    .booking-form-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .search-grid,
+    .destinations-grid, 
+    .stay-grid-container, 
+    .packages-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ================================================================
+   2. MOBILE NAVIGATION & HAMBURGER (Max-width: 992px)
+   ================================================================ */
+@media (max-width: 992px) {
+    .menu-icon {
+        display: block !important;
+        z-index: 10001; 
+        cursor: pointer;
+        color: #ffffff;
+    }
+
+    /* Desktop elements hide/show logic */
+    .desktop-only-btn {
+        display: none !important;
+    }
+
+    .sign-in-btn {
+        display: flex !important;
+        background: var(--primary-orange);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 50px;
+        font-size: 13px;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    /* Slide-in Menu */
+    .nav-links {
+        display: flex !important;
+        position: fixed;
+        top: 0;
+        right: -100%; 
+        height: 100vh;
+        width: 100%; 
+        background: #000000;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        z-index: 9999;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-links.active {
+        right: 0 !important;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        font-size: 1.8rem !important;
+        color: #ffffff !important; 
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-block;
+        transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: var(--primary-orange) !important;
+    }
+
+    /* Book Now inside Menu */
+    .mobile-only-item {
+        display: block;
+        margin-top: 20px;
+    }
+
+    .menu-book-btn {
+        background: var(--primary-orange);
+        color: white !important;
+        padding: 12px 35px;
+        border-radius: 50px;
+        font-weight: bold;
+        display: inline-block;
+    }
+
+    .nav-btns {
+        gap: 10px;
+    }
+}
+
+/* ================================================================
+   3. GENERAL MOBILE PHONES (Max-width: 768px)
+   ================================================================ */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 4%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9) !important;
+        backdrop-filter: blur(10px);
+    }
+
+    /* Hero & Text Scaling */
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .about-text h2, 
+    .headline-group h2, 
+    .packages-header h2, 
+    .stay-title h2, 
+    .gallery-main-title,
+    .stories-main-title,
+    .contact-title {
+        font-size: 2.5rem !important;
+    }
+
+    /* All Grids to Single Column */
+    .destinations-grid, 
+    .stay-grid-container, 
+    .packages-container, 
+    .about-grid,
+    .form-grid,
+    .search-grid,
+    .stay-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Stats Section */
+    .stats-glass {
+        position: relative;
+        margin-top: 40px;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Gallery - 2 columns */
+    .gallery-grid-main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .large-item, .wide-item {
+        grid-column: span 2;
+    }
+
+    /* Footer & Contact */
+    .contact-container,
+    .footer-container,
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+/* ================================================================
+   4. SMALL DEVICES (Max-width: 480px)
+   ================================================================ */
+@media (max-width: 480px) {
+    .logo { font-size: 22px; }
+
+    .hero-content h1 { font-size: 2.2rem; }
+
+    .badge {
+        font-size: 12px;
+        padding: 6px 15px;
+    }
+
+    .flight-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .price-section {
+        justify-content: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 15px;
+    }
+
+    .gallery-grid-main {
+        grid-template-columns: 1fr;
+    }
+
+    .large-item, .wide-item {
+        grid-column: span 1;
+    }
+}
